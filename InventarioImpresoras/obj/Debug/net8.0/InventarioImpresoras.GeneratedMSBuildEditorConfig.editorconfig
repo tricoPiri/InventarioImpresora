@@ -9,39 +9,59 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = InventarioImpresoras
 build_property.RootNamespace = InventarioImpresoras
-build_property.ProjectDir = C:\Users\irineo.calderon\source\repos\InventarioImpresoras\InventarioImpresoras\
+build_property.ProjectDir = C:\inetpub\wwwroot\InventarioImpresoras\InventarioImpresoras\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\irineo.calderon\source\repos\InventarioImpresoras\InventarioImpresoras
+build_property.MSBuildProjectDirectory = C:\inetpub\wwwroot\InventarioImpresoras\InventarioImpresoras
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/irineo.calderon/source/repos/InventarioImpresoras/InventarioImpresoras/Views/Home/Index.cshtml]
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/irineo.calderon/source/repos/InventarioImpresoras/InventarioImpresoras/Views/Home/Privacy.cshtml]
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/irineo.calderon/source/repos/InventarioImpresoras/InventarioImpresoras/Views/Shared/Error.cshtml]
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/irineo.calderon/source/repos/InventarioImpresoras/InventarioImpresoras/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Shared/_HeaderMobile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJNb2JpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Shared/_Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/irineo.calderon/source/repos/InventarioImpresoras/InventarioImpresoras/Views/_ViewImports.cshtml]
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/irineo.calderon/source/repos/InventarioImpresoras/InventarioImpresoras/Views/_ViewStart.cshtml]
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/irineo.calderon/source/repos/InventarioImpresoras/InventarioImpresoras/Views/Shared/_Layout.cshtml]
+[C:/inetpub/wwwroot/InventarioImpresoras/InventarioImpresoras/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-p5wprg444s

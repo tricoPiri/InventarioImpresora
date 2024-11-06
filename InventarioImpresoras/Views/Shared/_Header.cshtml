@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity;
+<div id="kt_header" class="header header-fixed">
+    <div class="container-fluid d-flex align-items-stretch justify-content-between" style="justify-content: end !important;">
+        <div class="row col-8" style="font-size: 20px;">
+            <p style="vertical-align: middle !important; margin-top: 15px;">
+                <strong style="color: #676060;">Sistema de Información Administrativa de Empleados</strong>
+            </p>
+        </div>
+        <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+            <div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default">
+                <ul class="menu-nav">
+                    <div class="dropdown">
+                        <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
+                            <div class="row flex-column-auto justify-content-center ">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="mr-2 mt-6">
+                                        <span class="font-weight-bold text-dark-0">@User.FindFirst("Usuario").Value</span>
+                                    </div>
+                                }
+                                <div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1 mt-3">
+                                    <img class="h-40px w-40px rounded-sm" src="~/media/users/default.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right" x-placement="bottom-end">
+                            <ul class="navi navi-hover py-4">
+                                <li class="navi-item active">
+                                    <!--<a href="/Login/Logout" class="navi-link">-->
+                                    <a href="/Login/Logout" class="navi-link">
+                                        <span class="navi-text">Cerrar sesión</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

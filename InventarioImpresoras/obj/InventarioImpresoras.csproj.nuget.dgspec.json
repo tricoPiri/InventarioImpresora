@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\irineo.calderon\\source\\repos\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj": {}
+    "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj": {}
   },
   "projects": {
-    "C:\\Users\\irineo.calderon\\source\\repos\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj": {
+    "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\irineo.calderon\\source\\repos\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj",
+        "projectUniqueName": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj",
         "projectName": "InventarioImpresoras",
-        "projectPath": "C:\\Users\\irineo.calderon\\source\\repos\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj",
+        "projectPath": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\InventarioImpresoras.csproj",
         "packagesPath": "C:\\Users\\irineo.calderon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\irineo.calderon\\source\\repos\\InventarioImpresoras\\InventarioImpresoras\\obj\\",
+        "outputPath": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\irineo.calderon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
