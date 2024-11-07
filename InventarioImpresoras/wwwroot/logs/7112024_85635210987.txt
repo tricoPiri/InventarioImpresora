@@ -1,0 +1,9 @@
+
+
+[Fecha:] jueves, 07 noviembre 2024 08: 56:35
+  [Mensaje Error:] No sign-in authentication handlers are registered. Did you forget to call AddAuthentication().AddCookie("Cookies",...)?
+ [InnerException:] 
+ [StackTrace:]    at Microsoft.AspNetCore.Authentication.AuthenticationService.SignInAsync(HttpContext context, String scheme, ClaimsPrincipal principal, AuthenticationProperties properties)
+   at RH.Controllers.LoginController.Login(String usuario, String contrasena) in C:\inetpub\wwwroot\InventarioImpresoras\InventarioImpresoras\Controllers\LoginController.cs:line 48
+
+

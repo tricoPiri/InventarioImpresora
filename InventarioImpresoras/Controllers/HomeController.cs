@@ -16,8 +16,6 @@ namespace InventarioImpresoras.Controllers
 
         public IActionResult Index()
         {
-            DAL_Conexion objConexion = new DAL_Conexion();
-            objConexion.Conectar();
             return View();
         }
 

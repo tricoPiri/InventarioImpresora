@@ -1,0 +1,16 @@
+﻿.tamañoTexto {
+    font-size: 12px !important;
+}
+
+.textoCentrado {
+    text-align: center !important;
+}
+
+.spinner-border {
+    width: 4rem !important;
+    height: 4rem !important;
+}
+
+.text-danger-blue {
+    color: blue !important;
+}

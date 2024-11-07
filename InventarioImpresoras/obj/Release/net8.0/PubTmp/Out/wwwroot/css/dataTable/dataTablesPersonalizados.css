@@ -1,0 +1,17 @@
+﻿th {
+    text-align: center !important;
+}
+
+.spinner-border {
+    width: 4rem !important;
+    height: 4rem !important;
+}
+
+.theadDataTable {
+    background-color: gainsboro !important;
+}
+
+.btn.btn-clean {
+    color: black !important;
+}
+

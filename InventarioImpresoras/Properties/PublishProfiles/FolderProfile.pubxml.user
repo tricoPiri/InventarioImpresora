@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\InventarioImpresoras\InventarioImpresoras\Release</_PublishTargetUrl>
+    <History>True|2024-11-07T15:47:07.0416315Z||;True|2024-11-07T09:45:18.4157321-06:00||;True|2024-11-07T09:38:27.6470800-06:00||;True|2024-11-07T09:28:10.0936184-06:00||;True|2024-11-07T09:26:21.6956210-06:00||;True|2024-11-07T09:23:37.6693300-06:00||;True|2024-11-07T09:23:11.0938337-06:00||;True|2024-11-07T09:06:08.3512393-06:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

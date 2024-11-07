@@ -7,21 +7,21 @@ namespace InventarioImpresoras.DAL
 {
     public class DAL_Login
     {
-        //objConexion objConexion = new objConexion();
+        DAL_Conexion objConexion = new DAL_Conexion();
         public DAL_Login()
         {
-            //objConexion.Conectar();
+            objConexion.Conectar();
         }
-        /*
-        public List<Login> Login(string usuario, string password)
+
+        public List<Usuarios> Login(string usuario, string password)
         {
-            List<Login> listaLogin = new List<Login>();
+            List<Usuarios> listaLogin = new List<Usuarios>();
             try
             {
-                SqlCommand command = new SqlCommand("Rh-Emp.Usuario_Login", objConexion.conexion);
+                SqlCommand command = new SqlCommand("spLogin", objConexion.conexion);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Usuario", usuario);
-                command.Parameters.AddWithValue("@Contraseña", password);
+                command.Parameters.AddWithValue("@usuario", usuario);
+                command.Parameters.AddWithValue("@password", password);
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
@@ -31,10 +31,16 @@ namespace InventarioImpresoras.DAL
 
                 foreach (DataRow dr in dataTable.Rows)
                 {
-                    listaLogin.Add(new Login
+                    listaLogin.Add(new Usuarios
                     {
-                        IdUsuario = (int)dr["id_Usuario"],
-                        Usuario = (string)dr["Usuario"],
+                        Usuario = (string)dr["usuario"],
+                        Roles = new List<Roles>
+                        {
+                            new Roles
+                            {
+                                IdRol = (int)dr["idRol"]
+                            }
+                        }
                     });
                 }
             }
@@ -45,40 +51,5 @@ namespace InventarioImpresoras.DAL
 
             return listaLogin;
         }
-		public List<Permiso> obtenerPermisos(int usuario_id)
-		{
-			List<Permiso> listaLogin = new List<Permiso>();
-			try
-			{
-				SqlCommand command = new SqlCommand("Rh-Emp.Usuario_ExpRH", objConexion.conexion);
-				command.CommandType = CommandType.StoredProcedure;
-				command.Parameters.AddWithValue("@Usuario_id", usuario_id);
-
-				SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-				DataTable dataTable = new DataTable();
-				objConexion.conexion.Open();
-				dataAdapter.Fill(dataTable);
-				objConexion.conexion.Close();
-
-				foreach (DataRow dr in dataTable.Rows)
-				{
-					listaLogin.Add(new Permiso
-					{
-						Usuario_Id = (int)dr["Usuario_id"],
-						Admin = (bool)dr["Adm_"],
-                        Aux_BD = (bool)dr["Aux_BD"],
-                        Exp_RH = (bool)dr["Exp_RH"],
-                        Aux_Ipsset = (bool)dr["Aux_Ipsset"],
-                    });
-				}
-			}
-			catch (Exception ex)
-			{
-				DAL_Utilerias.FormatoExcepcion(ex);
-			}
-
-			return listaLogin;
-		}
-        */
 	}
 }

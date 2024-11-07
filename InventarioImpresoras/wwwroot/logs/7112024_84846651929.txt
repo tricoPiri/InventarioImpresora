@@ -1,0 +1,8 @@
+
+
+[Fecha:] jueves, 07 noviembre 2024 08: 48:46
+  [Mensaje Error:] Object reference not set to an instance of an object.
+ [InnerException:] 
+ [StackTrace:]    at InventarioImpresoras.DAL.DAL_Login.Login(String usuario, String password) in C:\inetpub\wwwroot\InventarioImpresoras\InventarioImpresoras\DAL\DAL_Login.cs:line 28
+
+
