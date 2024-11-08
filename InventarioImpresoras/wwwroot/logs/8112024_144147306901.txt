@@ -1,0 +1,10 @@
+
+
+[Fecha:] viernes, 08 noviembre 2024 14: 41:47
+  [Mensaje Error:] Column 'usuario' does not belong to table .
+ [InnerException:] 
+ [StackTrace:]    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at InventarioImpresoras.DAL.DAL_Usuarios.getEmpleados() in C:\inetpub\wwwroot\InventarioImpresoras\InventarioImpresoras\DAL\DAL_Usuarios.cs:line 31
+
+
