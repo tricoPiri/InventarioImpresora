@@ -21,16 +21,13 @@
                                     <div id="spinner" class="spinner-border" role="status" style="visibility: visible;position: absolute;z-index: 1;top: 40%;">
                                         <span class="sr-only">Loading...</span>
                                     </div>
-                                    @if (User.FindFirst(ClaimTypes.Role).Value == "3")
-                                    {
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <div class="col-2" style="text-align:left;">
-                                                    <button id="btnRegistrar" type="reset" class="btn btn-primary mr-2">Registrar</button>
-                                                </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-2" style="text-align:left;">
+                                                <button id="btnAgregar" type="reset" class="btn btn-primary mr-2">Agregar</button>
                                             </div>
                                         </div>
-                                    }
+                                    </div>
                                     <table id="tablaUsuarios" class="table table-bordered table-hover" style="text-align:center !important;  cursor: pointer !important;">
                                         <thead class="theadDataTable">
                                             <tr>
@@ -40,12 +37,12 @@
                                                 <th>Usuario</th>
                                                 <th>Rol</th>
                                                 <th>Estatus</th>
+                                                <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         </tbody>
                                     </table>
-                                    <input id="txtRolIdEmpleadoSesion" type="hidden" value="@User.FindFirst(ClaimTypes.Role).Value" />
                                 </div>
                             </div>
                         </div>
@@ -150,16 +147,6 @@
     <script src="~/js/dataTable/jquery.dataTables.min.js"></script>
     <script src="~/js/dataTable/dataTables.bootstrap5.min.js"></script>
     <script>
-        const rolAdministrador = 1
-        /*
-        const rolAuxBD = 2
-        const rolExpRH = 3
-        const rolAuxIpsset = 4
-        */
-
-        //var idRolEmpleadoSesion = 0
-        //var idEstadoCivil = 0
-
         function llenarTablaUsuarios() {
             $.ajax({
                 url: "/Usuario/ConsultarUsuarios",
@@ -182,23 +169,107 @@
                             { "data": "apellidoPaterno" },
                             { "data": "apellidoMaterno" },
                             { "data": "usuario" },
-                            { 
-                                "data": function(data){
+                            {
+                                "data": function (data) {
                                     return data.roles[0].rol
+                                }
+                            },
+                            {
+                                "data": function (data) {
+                                    let opciones = ''
+                                    
+                                    if (data.activo == true) {
+                                        opciones += '<span class="label label-lg label-light-success label-inline" style="color: black;">Activo</span>'
+                                    } else {
+                                        opciones += '<span class="label label-lg label-light-danger label-inline" style="color: black;">Inactivo</span>'
+                                    }
+                                    return opciones
+                                    
+                                }
+                            },
+                            {
+                                "data": function(data) {
+                                    let opciones = ''
+
+                                    opciones += '<form method="POST" action="/Empleado/ViewEditar?Emp=' + data.empleado_Id + '" style="display:inline;">'
+                                    opciones += '   <input type="text" value=' + data.empleado_Id + ' style="display:none;"/>'
+                                    opciones += '   <button type="submit" style="color:black;" class="btn btn-icon btn-light btn-sm">'
+                                    opciones += '       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'
+                                    opciones += '           <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>'
+                                    opciones += '       </svg>'
+                                    opciones += '   </button>'
+                                    opciones += '   <button data-familiarGobiernoId="0" data-empleadoId="0" data-nombre="0" data-numeroEmp="0" data-parentescoId="0" data-dependencia="0" style="color:black;" class="btn btn-icon btn-light btn-sm" onclick="mostrarMensajeDesactivar(this); return false;">'
+                                    opciones += '       <svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">'
+                                    opciones += '           <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"></path>'
+                                    opciones += '       </svg>'
+                                    opciones += '   </button>'
+                                    opciones += '</form>'
+
+                                    return opciones
                                 }
                             }
                         ],
-                        columnDefs: [
-                            {
-                                target: 0,
-                                visible: false
-                            }
-                        ]
                     });
-                    
                 }
             })
         }
+        //INICIO ACTIVAR
+        function mostrarMensajeDesactivar(elemento) {
+            /*
+            let idFamiliarGobierno = $(elemento).attr("data-familiarGobiernoId")
+            //INICIO
+            Swal.fire({
+                title: "¿Estas seguro en eliminarlo?",
+                //text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si",
+                cancelButtonText: "No"
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "/Empleado/DesactivarFamiliarGobierno",
+                        data: { familiarGobierno_id: idFamiliarGobierno },
+                        type: "POST",
+                        success: function (response) {
+                            if (response > 0) {
+                                consultarTablaFamiliaresGobierno()
+                                swal.fire({
+                                    icon: "success",
+                                    buttonsStyling: false,
+                                    confirmButtonText: "Ok!",
+                                    title: "Registro eliminado con éxito!",
+                                    customClass: {
+                                        confirmButton: "btn font-weight-bold btn-light-primary"
+                                    }
+                                }).then(function () {
+                                    //KTUtil.scrollTop();
+                                });
+                            } else {
+                                swal.fire({
+                                    icon: "error",
+                                    buttonsStyling: false,
+                                    confirmButtonText: "Ok!",
+                                    title: "Ocurrio un error, por favor contacte a su administrador!",
+                                    customClass: {
+                                        //confirmButton: "btn font-weight-bold btn-light-primary"
+                                    }
+                                }).then(function () {
+                                    KTUtil.scrollTop();
+                                });
+                            }
+                        }
+                    })
+
+                }
+            });
+            //FINAL
+            */
+        }
+        //FINAL DESACTIVAR
         /*
         function mensajeDesactivar() {
             Swal.fire({

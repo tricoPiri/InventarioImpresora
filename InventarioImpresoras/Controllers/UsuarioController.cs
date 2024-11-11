@@ -14,7 +14,7 @@ namespace InventarioImpresoras.Controllers
             return View();
         }
 
-        //[Authorize(Roles = "1")]
+        [Authorize(Roles = "1")]
         public JsonResult ConsultarUsuarios()
         {
             List<Usuarios> listaUsuarios = new List<Usuarios>();
@@ -27,6 +27,15 @@ namespace InventarioImpresoras.Controllers
                 DAL_Utilerias.FormatoExcepcion(ex);
             }
             return Json(listaUsuarios);
+        }
+
+        [Authorize(Roles = "1")]
+        public IActionResult ViewAgregar()
+        {
+            //ViewData["Cat_Area"] = objCatalogo.getArea();
+            //ViewData["EmpleadosHijosTrue"] = objHijo.getHijosEmpleadosTrue();
+
+            return View("Agregar");
         }
 
 

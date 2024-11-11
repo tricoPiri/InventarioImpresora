@@ -43,7 +43,8 @@ namespace InventarioImpresoras.DAL
                                 Rol = (dr["rol"].ToString() == "" ? "" : (string)dr["rol"])
 
                             }
-                        }
+                        },
+                        Activo = (bool)(dr["activo"])
                     });
                 }
             }

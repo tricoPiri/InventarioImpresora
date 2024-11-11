@@ -72,10 +72,10 @@ function loguearse() {
                 data: { usuario: $("#usuario").val(), contrasena: $("#password").val() },
                 type: "POST",
                 success: function (response) {
-                    alert("response: " + response)
                     if (response == "1") {
 
-                        window.location.href = urlLoginProcesado + "/Impresora/Index"
+                        //window.location.href = urlLoginProcesado + "/Impresora/Index"
+                        window.location.href = urlLoginProcesado + "/Usuario/Index"
 
                     } else {
                         swal.fire({

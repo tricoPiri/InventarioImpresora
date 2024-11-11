@@ -1,0 +1,246 @@
+﻿@section CSS {
+    <link href="~/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css" />
+    <style>
+        .dropdown.bootstrap-select.form-control.form-control-lg {
+            line-height: 1.8rem !important;
+        }
+    </style>
+}
+@Html.Partial("~/Views/Shared/_HeaderMobile.cshtml")
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        @Html.Partial("~/Views/Shared/_Menu.cshtml")
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+            @Html.Partial("~/Views/Shared/_Header.cshtml")
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card card-custom example example-compact">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Agregar usuario</h3>
+                                    </div>
+                                    <form id="kt_form_1" method="POST" class="form" enctype="multipart/form-data">
+                                        <div class="card-body">
+                                            <div class="alert alert-custom alert-light-danger d-none" role="alert" id="kt_form_1_msg">
+                                                <div class="alert-icon">
+                                                    <i class="flaticon2-information"></i>
+                                                </div>
+                                                <div class="alert-text font-weight-bold"></div>
+                                                <div class="alert-close">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span>
+                                                            <i class="ki ki-close"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Nombre (s):</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtNombres" name="Nombres" type="text" class="form-control" placeholder="Ingresar nombre (s)" />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Apellido paterno:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtApellidoPaterno" name="ApellidoPaterno" type="text" class="form-control" placeholder="Ingresar apellido paterno" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Apellido materno:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtApellidoMaterno" name="ApellidoMaterno" type="text" class="form-control" placeholder="Ingresar apellido materno" />
+                                                </div>
+                                                <!--
+                                                <div class="col-lg-6">
+                                                    <label>Genero:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <select id="dropGenero" name="Genero" class="form-control" data-size="7" data-live-search="true">
+                                                        <option value="">Seleccione...</option>
+                                                        <option value="M">Mujer</option>
+                                                        <option value="H">Hombre</option>
+                                                    </select>
+                                                </div>
+                                                -->
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Acta de nacimiento:</label>
+                                                    <input id="txtActaNacimiento" name="ActaNacimiento" type="file" class="form-control" accept="application/pdf" />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>CURP:</label>
+                                                    <input id="txtCURP" name="CURP" type="file" class="form-control" accept="application/pdf" />
+                                                </div>
+                                            </div>
+                                            <div class="example-code mt-10">
+                                                <ul class="example-nav nav nav-tabs nav-bold nav-tabs-line nav-tabs-line-2x">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" data-toggle="tab" href="#example_code_html">HTML</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="example_code_html" role="tabpanel">
+                                                        <div class="example-highlight">
+                                                            <pre style="height:400px">
+                                                    </pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">URL *</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">
+                                                                    <i class="flaticon2-website"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="text" class="form-control" name="url" placeholder="Enter your url" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col-lg-12" style="text-align:center;">
+                                                    <a href="@Url.Action("Index", "Hijo")" class="btn btn-light-primary font-weight-bold">Cancelar</a>
+                                                    <button id="btnGuardar" type="submit" class="btn btn-primary font-weight-bold mr-2" name="submitButton">Guardar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/_Footer.cshtml")
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="/js/validaciones/registrarHijo.js" type="text/javascript"></script>
+    <script src="~/js/pages/crud/forms/widgets/bootstrap-select.js"></script>
+    <script>
+        /*
+        var objHijo = null
+        var fileActaNacimiento = null
+        var fileCURP = null
+
+        function registrarHijo() {
+
+            objHijo = new FormData()
+            fileActaNacimiento = document.getElementById("txtActaNacimiento").files[0];
+            fileCURP = document.getElementById("txtCURP").files[0];
+
+            if (fileActaNacimiento != null || fileCURP != null) {
+                objHijo.append("FileActaNacimiento", fileActaNacimiento)
+                objHijo.append("FileCURP", fileCURP)
+                objHijo.append("Empleado_Id", $("#dropEmpleado").val())
+                objHijo.append("Nombre", $("#txtNombreHijo").val())
+                objHijo.append("FechaNacimiento", $("#txtFechaNacimiento").val())
+                objHijo.append("Genero", $("#dropGenero").val())
+                //INICIO
+                $.ajax({
+                    url: "/Hijo/Registrar/",
+                    data: objHijo,
+                    type: "POST",
+                    dataType: "json",
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response > 0) {
+                            swal.fire({
+                                icon: "success",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok!",
+                                title: "Registro capturado con &eacutexito!",
+                                customClass: {
+                                    confirmButton: "btn font-weight-bold btn-light-primary"
+                                }
+                            }).then(function () {
+                                KTUtil.scrollTop();
+                            });
+                            setTimeout(function () {
+                                window.location.href = '/Hijo/Index'
+                            }, 2000)
+                        }
+                        else {
+                            swal.fire({
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok!",
+                                title: "Ocurrio un error!",
+                                text: "Por favor contacte a su administrador!",
+                                customClass: {
+                                    confirmButton: "btn font-weight-bold btn-light-primary"
+                                }
+                            }).then(function () {
+                                KTUtil.scrollTop();
+                            });
+                        }
+                    }
+                })
+                //FINAL
+            } else {
+                let empleado_id = $("#dropEmpleado").val()
+                let nombreHijo = $("#txtNombreHijo").val()
+                let fechaNacimiento = $("#txtFechaNacimiento").val()
+                let genero = $("#dropGenero").val()
+
+                $.ajax({
+                    url: "/Hijo/RegistrarHijoSinDocumentos",
+                    data: { empleado_id: empleado_id, nombreHijo: nombreHijo, fechaNacimiento: fechaNacimiento, genero: genero },
+                    type: "POST",
+                    success: function (response) {
+
+                        if (response > 0) {
+                            swal.fire({
+                                icon: "success",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok!",
+                                title: "Registro capturado con &eacutexito!",
+                                customClass: {
+                                    confirmButton: "btn font-weight-bold btn-light-primary"
+                                }
+                            }).then(function () {
+                                KTUtil.scrollTop();
+                            });
+                            setTimeout(function () {
+                                window.location.href = '/Hijo/Index'
+                            }, 2000)
+                        }
+                        else {
+                            swal.fire({
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok!",
+                                title: "Ocurrio un error!",
+                                text: "Por favor contacte a su administrador!",
+                                customClass: {
+                                    confirmButton: "btn font-weight-bold btn-light-primary"
+                                }
+                            }).then(function () {
+                                KTUtil.scrollTop();
+                            });
+                        }
+                    }
+                })
+            }
+        }
+
+        $(document).ready(function () {
+            $("#btnGuardar").click(function (e) {
+                e.preventDefault()
+                validarCampos()
+            })
+        })
+        */
+    </script>
+}
