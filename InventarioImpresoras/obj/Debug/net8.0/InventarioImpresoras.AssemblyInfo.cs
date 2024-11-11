@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventarioImpresoras")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd2bb0cc7538643d6764868e6bfd45cfc9bb4247")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c79c16c224ed2e4b7e20d8bd68274f336951bea")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventarioImpresoras")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventarioImpresoras")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
