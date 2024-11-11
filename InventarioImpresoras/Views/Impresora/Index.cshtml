@@ -154,7 +154,7 @@
                 success: function (response) {
                     console.log("response: \n")
                     console.log(response)
-                    
+
                     $("#tablaUsuarios").DataTable({
                         order: [[0, 'desc']],
                         destroy: true,
@@ -177,18 +177,18 @@
                             {
                                 "data": function (data) {
                                     let opciones = ''
-                                    
+
                                     if (data.activo == true) {
                                         opciones += '<span class="label label-lg label-light-success label-inline" style="color: black;">Activo</span>'
                                     } else {
                                         opciones += '<span class="label label-lg label-light-danger label-inline" style="color: black;">Inactivo</span>'
                                     }
                                     return opciones
-                                    
+
                                 }
                             },
                             {
-                                "data": function(data) {
+                                "data": function (data) {
                                     let opciones = ''
 
                                     opciones += '<form method="POST" action="/Empleado/ViewEditar?Emp=' + data.empleado_Id + '" style="display:inline;">'
@@ -370,153 +370,153 @@
             })
         }
         */
-       /*
-        function consultarContactoEmergencia(idEmpleado) {
-            $.ajax({
-                url: "/Empleado/ConsultarContactoEmergencia",
-                data: { idEmpleado: idEmpleado },
-                type: "POST",
-                success: function (response) {
-                    if (response.length > 0) {
-                        $("#divNombreContactoEmergencia").html("<strong>Nombre completo: </strong>" + response[0].nombre)
-                        $("#divTelefonoContactoEmergencia").html("<strong>Teléfono: </strong>" + response[0].telefono)
-                        $("#divParentescoContactoEmergencia").html("<strong>Parentesco: </strong>" + response[0].parentesco)
-                    }
-                }
-            })
-        }
-        */
-       /*
-        function consultarTablaFamiliaresGobierno(idEmpleado) {
-            $.ajax({
-                url: "/Empleado/ConsultarFamiliaresGobierno",
-                data: { idEmpleado: idEmpleado },
-                success: function (response) {
-                    let append = ""
+        /*
+         function consultarContactoEmergencia(idEmpleado) {
+             $.ajax({
+                 url: "/Empleado/ConsultarContactoEmergencia",
+                 data: { idEmpleado: idEmpleado },
+                 type: "POST",
+                 success: function (response) {
+                     if (response.length > 0) {
+                         $("#divNombreContactoEmergencia").html("<strong>Nombre completo: </strong>" + response[0].nombre)
+                         $("#divTelefonoContactoEmergencia").html("<strong>Teléfono: </strong>" + response[0].telefono)
+                         $("#divParentescoContactoEmergencia").html("<strong>Parentesco: </strong>" + response[0].parentesco)
+                     }
+                 }
+             })
+         }
+         */
+        /*
+         function consultarTablaFamiliaresGobierno(idEmpleado) {
+             $.ajax({
+                 url: "/Empleado/ConsultarFamiliaresGobierno",
+                 data: { idEmpleado: idEmpleado },
+                 success: function (response) {
+                     let append = ""
 
-                    $.each(response, function (index, value) {
-                        append += '<tr>'
-                        append += ' <td>' + value.numeroEmpleado + '</td>'
-                        append += ' <td>' + value.nombre + '</td>'
-                        append += ' <td>' + value.parentesco[0].parentesco + '</td>'
-                        append += ' <td>' + value.dependencia + '</td>'
-                        append += '</tr>'
-                    })
-                    $("#tbodyFamiliarGobierno").html(append)
-                }
-            })
-        }
-        */
-       /*
-        function consultarTablaPadres(idEmpleado) {
+                     $.each(response, function (index, value) {
+                         append += '<tr>'
+                         append += ' <td>' + value.numeroEmpleado + '</td>'
+                         append += ' <td>' + value.nombre + '</td>'
+                         append += ' <td>' + value.parentesco[0].parentesco + '</td>'
+                         append += ' <td>' + value.dependencia + '</td>'
+                         append += '</tr>'
+                     })
+                     $("#tbodyFamiliarGobierno").html(append)
+                 }
+             })
+         }
+         */
+        /*
+         function consultarTablaPadres(idEmpleado) {
 
-            $.ajax({
-                url: "/Empleado/ConsultarPadres",
-                data: { idEmpleado: idEmpleado },
-                success: function (response) {
-                    let append = ""
+             $.ajax({
+                 url: "/Empleado/ConsultarPadres",
+                 data: { idEmpleado: idEmpleado },
+                 success: function (response) {
+                     let append = ""
 
-                    $.each(response, function (index, value) {
-                        append += '<tr>'
-                        append += '	<td>' + value.nombre + '</td>'
-                        append += '	<td>' + value.domicilio + '</td>'
-                        append += '	<td>' + value.ocupacion + '</td>'
-                        if (value.vivo == true) {
-                            append += '	<td>Vivo</td>'
-                        } else if (value.vivo == false) {
-                            append += '	<td>Finado</td>'
-                        }
-                        append += '</tr>'
-                    })
-                    $("#tbodyPadres").html(append)
-                }
-            })
-        }
-        */
-       /*
-        function consultarConyugue(idEmpleado) {
-            $.ajax({
-                url: "/Empleado/ConsultarConyugues",
-                data: { idEmpleado: idEmpleado },
-                type: "POST",
-                success: function (response) {
-                    if (response.length > 0) {
-                        if (idEstadoCivil == 1) {
-                            $("#divNombreConyugue").html("<strong>Conyugue: </strong>" + response[0].nombre)
-                            $("#divTelefonoConyugue").html("<strong>Teléfono: </strong>" + response[0].telefono)
+                     $.each(response, function (index, value) {
+                         append += '<tr>'
+                         append += '	<td>' + value.nombre + '</td>'
+                         append += '	<td>' + value.domicilio + '</td>'
+                         append += '	<td>' + value.ocupacion + '</td>'
+                         if (value.vivo == true) {
+                             append += '	<td>Vivo</td>'
+                         } else if (value.vivo == false) {
+                             append += '	<td>Finado</td>'
+                         }
+                         append += '</tr>'
+                     })
+                     $("#tbodyPadres").html(append)
+                 }
+             })
+         }
+         */
+        /*
+         function consultarConyugue(idEmpleado) {
+             $.ajax({
+                 url: "/Empleado/ConsultarConyugues",
+                 data: { idEmpleado: idEmpleado },
+                 type: "POST",
+                 success: function (response) {
+                     if (response.length > 0) {
+                         if (idEstadoCivil == 1) {
+                             $("#divNombreConyugue").html("<strong>Conyugue: </strong>" + response[0].nombre)
+                             $("#divTelefonoConyugue").html("<strong>Teléfono: </strong>" + response[0].telefono)
 
-                            if (response[0].fecha_Matrimonio.length > 0) {
-                                let fechaMatrimonio = response[0].fecha_Matrimonio.split('T')
-                                let fechaMatrimonioProcesada = fechaMatrimonio[0].split('-')[2] + "/" + fechaMatrimonio[0].split('-')[1] + "/" + fechaMatrimonio[0].split('-')[0]
+                             if (response[0].fecha_Matrimonio.length > 0) {
+                                 let fechaMatrimonio = response[0].fecha_Matrimonio.split('T')
+                                 let fechaMatrimonioProcesada = fechaMatrimonio[0].split('-')[2] + "/" + fechaMatrimonio[0].split('-')[1] + "/" + fechaMatrimonio[0].split('-')[0]
 
-                                if (fechaMatrimonioProcesada == "01/01/1900") {
-                                    $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>")
-                                } else {
-                                    $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>" + fechaMatrimonio[0].split('-')[2] + "/" + fechaMatrimonio[0].split('-')[1] + "/" + fechaMatrimonio[0].split('-')[0])
-                                }
+                                 if (fechaMatrimonioProcesada == "01/01/1900") {
+                                     $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>")
+                                 } else {
+                                     $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>" + fechaMatrimonio[0].split('-')[2] + "/" + fechaMatrimonio[0].split('-')[1] + "/" + fechaMatrimonio[0].split('-')[0])
+                                 }
 
-                            }
-                        }
-                    }
-                }
-            })
-        }
-        */
-       /*
-        function limpiarCamposModal() {
-            //Datos generales
-            $("#divNombreCompleto").html("<strong>Nombre completo: <strong>")
-            $("#divFechaNacimiento").html("<strong>Fecha de nacimiento: <strong>")
-            $("#divRFC").html("<strong>RFC: <strong>")
-            $("#divCURP").html("<strong>CURP: <strong>")
-            $("#divGenero").html("<strong>Genero: <strong>")
-            $("#divTipoSangre").html("<strong>Tipo de sangre: <strong>")
-            $("#divEstadoCivil").html("<strong>Genero: <strong>")
+                             }
+                         }
+                     }
+                 }
+             })
+         }
+         */
+        /*
+         function limpiarCamposModal() {
+             //Datos generales
+             $("#divNombreCompleto").html("<strong>Nombre completo: <strong>")
+             $("#divFechaNacimiento").html("<strong>Fecha de nacimiento: <strong>")
+             $("#divRFC").html("<strong>RFC: <strong>")
+             $("#divCURP").html("<strong>CURP: <strong>")
+             $("#divGenero").html("<strong>Genero: <strong>")
+             $("#divTipoSangre").html("<strong>Tipo de sangre: <strong>")
+             $("#divEstadoCivil").html("<strong>Genero: <strong>")
 
-            //Domicilio
-            $("#divCalle").html("<strong>Calle: <strong>")
-            $("#divEntreCalles").html("<strong>Entre calles: <strong>")
-            $("#divNumeroExterior").html("<strong>Número exterior: <strong>")
-            $("#divNumeroInterior").html("<strong>Número interior: <strong>")
-            $("#divColonia").html("<strong>Colonia: <strong>")
-            $("#divCodigoPostal").html("<strong>Codigo postal: <strong>")
+             //Domicilio
+             $("#divCalle").html("<strong>Calle: <strong>")
+             $("#divEntreCalles").html("<strong>Entre calles: <strong>")
+             $("#divNumeroExterior").html("<strong>Número exterior: <strong>")
+             $("#divNumeroInterior").html("<strong>Número interior: <strong>")
+             $("#divColonia").html("<strong>Colonia: <strong>")
+             $("#divCodigoPostal").html("<strong>Codigo postal: <strong>")
 
-            //profesion
-            $("#divProfesion").html("<strong>Profesión: </strong>")
-            $("#divCarreraTrunca").html("<strong>Carrera trunca: </strong>")
-            $("#divPosgrado").html("<strong>Posgrado: </strong>")
-            $("#divPosgradoEnCurso").html("<strong>Posgrado en curso: </strong>")
+             //profesion
+             $("#divProfesion").html("<strong>Profesión: </strong>")
+             $("#divCarreraTrunca").html("<strong>Carrera trunca: </strong>")
+             $("#divPosgrado").html("<strong>Posgrado: </strong>")
+             $("#divPosgradoEnCurso").html("<strong>Posgrado en curso: </strong>")
 
-            //contacto
-            $("#divEmailPersonal").html("<strong>Correo electrónico personal: </strong>")
-            $("#divEmailInstitucional").html("<strong>Correo electrónico institucional: </strong>")
-            $("#divTelefonoCasa").html("<strong>Teléfono de casa: </strong>")
-            $("#divTelefonoMovil").html("<strong>Teléfono de móvil: </strong>")
+             //contacto
+             $("#divEmailPersonal").html("<strong>Correo electrónico personal: </strong>")
+             $("#divEmailInstitucional").html("<strong>Correo electrónico institucional: </strong>")
+             $("#divTelefonoCasa").html("<strong>Teléfono de casa: </strong>")
+             $("#divTelefonoMovil").html("<strong>Teléfono de móvil: </strong>")
 
-            //contacto emergencia
-            $("#divNombreContactoEmergencia").html("<strong>Nombre completo: </strong>")
-            $("#divTelefonoContactoEmergencia").html("<strong>Teléfono: </strong>")
-            $("#divParentescoContactoEmergencia").html("<strong>Parentesco: </strong>")
+             //contacto emergencia
+             $("#divNombreContactoEmergencia").html("<strong>Nombre completo: </strong>")
+             $("#divTelefonoContactoEmergencia").html("<strong>Teléfono: </strong>")
+             $("#divParentescoContactoEmergencia").html("<strong>Parentesco: </strong>")
 
-            //conyugue
-            $("#divNombreConyugue").html("<strong>Conyugue: </strong>")
-            $("#divTelefonoConyugue").html("<strong>Teléfono: </strong>")
-            $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>")
+             //conyugue
+             $("#divNombreConyugue").html("<strong>Conyugue: </strong>")
+             $("#divTelefonoConyugue").html("<strong>Teléfono: </strong>")
+             $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>")
 
-        }
-        */
-       /*
-        function modalConsultarInformacionEmpleado(idEmpleado) {
-            limpiarCamposModal()
-            consultarDatosGenerales(idEmpleado)
-            consultarContactoEmergencia(idEmpleado)
-            consultarTablaPadres(idEmpleado)
-            consultarTablaFamiliaresGobierno(idEmpleado)
-            consultarConyugue(idEmpleado)
-            $('#btnModalConsultarEmpleado').trigger('click')
-            return false
-        }
-        */
+         }
+         */
+        /*
+         function modalConsultarInformacionEmpleado(idEmpleado) {
+             limpiarCamposModal()
+             consultarDatosGenerales(idEmpleado)
+             consultarContactoEmergencia(idEmpleado)
+             consultarTablaPadres(idEmpleado)
+             consultarTablaFamiliaresGobierno(idEmpleado)
+             consultarConyugue(idEmpleado)
+             $('#btnModalConsultarEmpleado').trigger('click')
+             return false
+         }
+         */
         $(document).ready(function () {
             //idRolEmpleadoSesion = $("#txtRolIdEmpleadoSesion").val()
             $('#tablaUsuarios').DataTable();
@@ -528,7 +528,7 @@
                 $("#cardBody").css("visibility", "visible");
             }, "500");
 
-            $("#btnAgregar").click(function () {
+            $("#btnRegistrar").click(function () {
                 window.location.href = "/Usuario/ViewAgregar"
             })
         })

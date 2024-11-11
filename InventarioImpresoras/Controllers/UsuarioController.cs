@@ -9,6 +9,7 @@ namespace InventarioImpresoras.Controllers
     public class UsuarioController : Controller
     {
         DAL_Usuarios objUsuario = new DAL_Usuarios();
+        DAL_Roles objRoles = new DAL_Roles();
         public ActionResult Index()
         {
             return View();
@@ -32,8 +33,7 @@ namespace InventarioImpresoras.Controllers
         [Authorize(Roles = "1")]
         public IActionResult ViewAgregar()
         {
-            //ViewData["Cat_Area"] = objCatalogo.getArea();
-            //ViewData["EmpleadosHijosTrue"] = objHijo.getHijosEmpleadosTrue();
+            ViewData["Roles"] = objRoles.getRoles();
 
             return View("Agregar");
         }
