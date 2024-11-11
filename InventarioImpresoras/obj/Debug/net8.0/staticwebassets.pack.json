@@ -9469,8 +9469,12 @@
       "PackagePath": "staticwebassets\\publico\\js\\utilerias.js"
     },
     {
-      "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\publico\\media\\bg\\Fondo_dos.png",
-      "PackagePath": "staticwebassets\\publico\\media\\bg\\Fondo_dos.png"
+      "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\publico\\media\\bg\\Fondo_Login_1.jpg",
+      "PackagePath": "staticwebassets\\publico\\media\\bg\\Fondo_Login_1.jpg"
+    },
+    {
+      "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\publico\\media\\bg\\Fondo_Login_2.jpg",
+      "PackagePath": "staticwebassets\\publico\\media\\bg\\Fondo_Login_2.jpg"
     },
     {
       "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\publico\\media\\error\\bg1.jpg",
