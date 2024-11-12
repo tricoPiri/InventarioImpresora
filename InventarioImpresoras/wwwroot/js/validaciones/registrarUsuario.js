@@ -81,7 +81,7 @@ function validarCampos()
 	validation.validate().then(function (status) {
 		if (status == 'Valid')
 		{
-			registrarHijo()
+			registrarUsuario()
 			
 		} else {
 			Swal.fire({
