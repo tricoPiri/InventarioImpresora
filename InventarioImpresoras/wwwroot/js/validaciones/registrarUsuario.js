@@ -7,31 +7,45 @@ var KTFormControls = function () {
 			document.getElementById('kt_form_1'),
 			{
 				fields: {
-					Empleado: {
+					Nombres: {
 						validators: {
 							notEmpty: {
-								message: 'El empleado es requerido'
+								message: 'El nombre (s) es requerido'
 							}
 						}
 					},
-					NombreHijo: {
+					ApellidoPaterno: {
 						validators: {
 							notEmpty: {
-								message: 'El nombre del hijo es requerido'
+								message: 'El apellido paterno es requerido'
 							}
 						}
 					},
-					FechaNacimiento: {
+					ApellidoMaterno: {
 						validators: {
 							notEmpty: {
-								message: 'La fecha de nacimiento es requerido'
+								message: 'El apellido materno es requerido'
 							}
 						}
 					},
-					Genero: {
+					Usuario: {
 						validators: {
 							notEmpty: {
-								message: 'El genero es requerido'
+								message: 'El usuario es requerido'
+							}
+						}
+					},
+					Password: {
+						validators: {
+							notEmpty: {
+								message: 'La contrase&ntilde;a es requerido'
+							}
+						}
+					},
+					Rol: {
+						validators: {
+							notEmpty: {
+								message: 'El rol es requerido'
 							}
 						}
 					}

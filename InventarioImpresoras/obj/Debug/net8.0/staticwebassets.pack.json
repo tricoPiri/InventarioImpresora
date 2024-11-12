@@ -1625,20 +1625,20 @@
       "PackagePath": "staticwebassets\\js\\validaciones\\registrarFamiliaConyugue.min.js"
     },
     {
-      "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarHijo.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarHijo.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarHijo.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarHijo.min.js"
-    },
-    {
       "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarReingresoEmpleado.js",
       "PackagePath": "staticwebassets\\js\\validaciones\\registrarReingresoEmpleado.js"
     },
     {
       "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarReingresoEmpleado.min.js",
       "PackagePath": "staticwebassets\\js\\validaciones\\registrarReingresoEmpleado.min.js"
+    },
+    {
+      "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarUsuario.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\registrarUsuario.js"
+    },
+    {
+      "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarUsuario.min.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\registrarUsuario.min.js"
     },
     {
       "Id": "C:\\inetpub\\wwwroot\\InventarioImpresoras\\InventarioImpresoras\\wwwroot\\json\\es_ES.json",

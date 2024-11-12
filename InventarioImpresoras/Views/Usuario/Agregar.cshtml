@@ -114,8 +114,8 @@
                                         <div class="card-footer">
                                             <div class="row">
                                                 <div class="col-lg-12" style="text-align:center;">
-                                                    <a href="@Url.Action("Index", "Hijo")" class="btn btn-light-primary font-weight-bold">Cancelar</a>
-                                                    <button id="btnGuardar" type="submit" class="btn btn-primary font-weight-bold mr-2" name="submitButton">Guardar</button>
+                                                    <a href="@Url.Action("Index", "Usuario")" class="btn btn-light-primary font-weight-bold">Cancelar</a>
+                                                    <button id="btnRegistrar" type="submit" class="btn btn-primary font-weight-bold mr-2" name="submitButton">Guardar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -131,7 +131,7 @@
     </div>
 </div>
 @section Scripts {
-    <script src="/js/validaciones/registrarHijo.js" type="text/javascript"></script>
+    <script src="/js/validaciones/registrarUsuario.js" type="text/javascript"></script>
     <script src="~/js/pages/crud/forms/widgets/bootstrap-select.js"></script>
     <script>
         /*
@@ -240,13 +240,12 @@
                 })
             }
         }
-
+        */
         $(document).ready(function () {
-            $("#btnGuardar").click(function (e) {
+            $("#btnRegistrar").click(function (e) {
                 e.preventDefault()
                 validarCampos()
             })
         })
-        */
     </script>
 }
