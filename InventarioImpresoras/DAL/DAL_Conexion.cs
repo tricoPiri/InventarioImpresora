@@ -9,15 +9,7 @@ namespace InventarioImpresoras.DAL
         {
             try
             {
-                /*conexion = new SqlConnection("Server=172.16.9.15\\desarrollo;Integrated Security=false;Database=Administrativo;user id=sa;password=Abc@123;");*/
-
-                //conexion = new SqlConnection("Server=172.168.1.136\\Desarrollo;Integrated Security=false;Database=Administrativo;user id=sa;password=Abc@123;");
-
-                //conexion = new SqlConnection("Server=172.168.1.136\\Desarrollo;Integrated Security=false;Database=Rh&Adm;user id=sa;password=Abc@123;");
-
-                conexion = new SqlConnection("Server=CTI01GM24\\SQLEXPRESS01; Database=InventarioImpresoras;Integrated Security=true;");
-
-                //conexion = new SqlConnection("Server=172.16.9.15\\Desarrollo;Integrated Security=false;Database=Rh&Adm;user id=sa;password=Abc@123;");
+                conexion = new SqlConnection("Server=DRAGONASUS\\SQLEXPRESS; Database=InventarioImpresoras;Integrated Security=true;");
             }
             catch (Exception ex)
             {
