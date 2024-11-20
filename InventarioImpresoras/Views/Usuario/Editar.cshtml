@@ -122,8 +122,9 @@
                                         <div class="card-footer">
                                             <div class="row">
                                                 <div class="col-lg-12" style="text-align:center;">
+                                                    <input id="txtIdUsuario" type="hidden" value="@ViewBag.idUsuario" />
                                                     <a href="@Url.Action("Index", "Usuario")" class="btn btn-light-primary font-weight-bold">Cancelar</a>
-                                                    <button id="btnRegistrar" type="submit" class="btn btn-primary font-weight-bold mr-2" name="submitButton">Guardar</button>
+                                                    <button id="btnEditar" type="submit" class="btn btn-primary font-weight-bold mr-2" name="submitButton">Guardar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -139,9 +140,10 @@
     </div>
 </div>
 @section Scripts {
-    <script src="/js/validaciones/registrarUsuario.js" type="text/javascript"></script>
+    <script src="/js/validaciones/editarUsuario.js" type="text/javascript"></script>
     <script>
-        function registrarUsuario() {
+        function editarUsuario() {
+            let idUsuario = $("#txtIdUsuario").val()
             let nombre = $("#txtNombres").val()
             let apellidoPaterno = $("#txtApellidoPaterno").val()
             let apellidoMaterno = $("#txtApellidoMaterno").val()
@@ -150,8 +152,8 @@
             let idRol = $("#dropRol").val()
 
             $.ajax({
-                url: "/Usuario/registrar",
-                data: { nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, usuario: usuario, password: password, idRol: idRol },
+                url: "/Usuario/editar",
+                data: { idUsuario: idUsuario, nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, usuario: usuario, password: password, idRol: idRol },
                 type: "POST",
                 success: function (response) {
                     if (response > 0) {
@@ -159,7 +161,7 @@
                             icon: "success",
                             buttonsStyling: false,
                             confirmButtonText: "Ok!",
-                            title: "Registro agregado con &eacutexito!",
+                            title: "Registro editado con &eacutexito!",
                             customClass: {
                                 confirmButton: "btn font-weight-bold btn-light-primary"
                             }
@@ -167,6 +169,11 @@
                             KTUtil.scrollTop();
                         });
                         //aki un redirect
+                        //window.redirect
+                        setTimeout(() => {
+                            window.location.href = "/Usuario"
+                        }, "3000");
+                        
                     }
                     else {
                         swal.fire({
@@ -187,7 +194,7 @@
         }
 
         $(document).ready(function () {
-            $("#btnRegistrar").click(function (e) {
+            $("#btnEditar").click(function (e) {
                 e.preventDefault()
                 validarCampos()
             })

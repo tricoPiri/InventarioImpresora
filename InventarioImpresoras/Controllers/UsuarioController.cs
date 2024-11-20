@@ -28,6 +28,7 @@ namespace InventarioImpresoras.Controllers
         [Authorize(Roles = "1")]
         public IActionResult ViewEditar(int usuario)
         {
+            ViewData["idUsuario"] = usuario;
             ViewData["Usuarios"] = objUsuario.getUsuario(usuario);
             ViewData["Roles"] = objRoles.getRoles();
 
@@ -83,13 +84,13 @@ namespace InventarioImpresoras.Controllers
         }
 
         [Authorize(Roles = "1")]
-        public decimal editar(string nombre, string apellidoPaterno, string apellidoMaterno, string usuario, string password, int idRol)
+        public int editar(int idUsuario, string nombre, string apellidoPaterno, string apellidoMaterno, string usuario, string password, int idRol)
         {
-            decimal resultado = 0;
+            int resultado = 0;
             try
             {
                 DAL_Usuarios objUsuario = new DAL_Usuarios();
-                resultado = objUsuario.registrar(nombre, apellidoPaterno, apellidoMaterno, usuario, password, idRol);
+                resultado = objUsuario.editar(idUsuario, nombre, apellidoPaterno, apellidoMaterno, usuario, password, idRol);
             }
             catch (Exception ex)
             {

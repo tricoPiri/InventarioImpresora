@@ -133,5 +133,38 @@ namespace InventarioImpresoras.DAL
             }
             return resultado;
         }
+
+        public int editar(int idUsuario, string nombre, string apellidoPaterno, string apellidoMaterno, string usuario, string password, int idRol)
+        {
+            int resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spEditarUsuario", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                sqlCmd.Parameters.AddWithValue("@nombre", nombre);
+                sqlCmd.Parameters.AddWithValue("@apellidoPaterno", apellidoPaterno);
+                sqlCmd.Parameters.AddWithValue("@apellidoMaterno", apellidoMaterno);
+                sqlCmd.Parameters.AddWithValue("@usuario", usuario);
+                sqlCmd.Parameters.AddWithValue("@password", password);
+                sqlCmd.Parameters.AddWithValue("@idRol", idRol);
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
+
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (int)(dr["resultado"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
     }
 }

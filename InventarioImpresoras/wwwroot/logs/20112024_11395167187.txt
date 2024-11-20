@@ -1,0 +1,8 @@
+
+
+[Fecha:] miércoles, 20 noviembre 2024 11: 39:05
+  [Mensaje Error:] Unable to cast object of type 'System.Int32' to type 'System.Decimal'.
+ [InnerException:] 
+ [StackTrace:]    at InventarioImpresoras.DAL.DAL_Usuarios.editar
+
+
