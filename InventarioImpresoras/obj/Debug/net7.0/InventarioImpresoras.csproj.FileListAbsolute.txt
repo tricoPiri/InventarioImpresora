@@ -44,13 +44,13 @@ C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\Inv
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.MvcApplicationPartsAssemblyInfo.cache
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.RazorAssemblyInfo.cache
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.RazorAssemblyInfo.cs
+C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.build.json
+C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.development.json
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets\msbuild.InventarioImpresoras.Microsoft.AspNetCore.StaticWebAssets.props
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets\msbuild.build.InventarioImpresoras.props
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.InventarioImpresoras.props
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.InventarioImpresoras.props
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.pack.json
-C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.build.json
-C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.development.json
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\scopedcss\bundle\InventarioImpresoras.styles.css
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\scopedcss\projectbundle\InventarioImpresoras.bundle.scp.css
@@ -59,4 +59,5 @@ C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\ref
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.pdb
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.genruntimeconfig.cache
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\ref\InventarioImpresoras.dll
-C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.csproj.CopyComplete
+C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.sourcelink.json
+C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\Inventar.3A119EB2.Up2Date
