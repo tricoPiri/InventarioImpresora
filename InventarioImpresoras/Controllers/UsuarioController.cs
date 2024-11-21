@@ -100,5 +100,23 @@ namespace InventarioImpresoras.Controllers
 
             return resultado;
         }
+
+        [Authorize(Roles = "1")]
+        public int DesactivarUsuario(int idUsuario)
+        {
+            int resultado = 0;
+            try
+            {
+                DAL_Usuarios objUsuario = new DAL_Usuarios();
+                resultado = objUsuario.desactivar(idUsuario);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
     }
 }
