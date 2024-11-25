@@ -11,6 +11,14 @@
         .modal-body{
             overflow: hidden !important;
         }
+
+        .bordeRojo{
+            border: 1px solid red;
+        }
+
+        .bordeGris{
+            border: 1px solid #E4E6EF;
+        }
     </style>
 }
 @Html.Partial("~/Views/Shared/_HeaderMobile.cshtml")
@@ -80,7 +88,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
-                                                <button id="btnRegistrar" type="button" class="btn btn-primary font-weight-bold" data-dismiss="modal">Registrar</button>
+                                                <button id="btnRegistrar" type="button" class="btn btn-primary font-weight-bold">Registrar</button>
                                             </div>
                                         <!--</div>-->
                                     </div>
@@ -582,7 +590,19 @@
 
             $("#btnRegistrar").click(function () {
                 console.log("llego al evento")
-                registrarRoles()
+
+                if($("#txtNombre").val() == '')
+                {
+                     console.log("en el if")
+                    $("#txtNombre").addClass("bordeRojo")
+                   
+                }
+                else
+                {
+                    console.log("en el else")
+                    $("#txtNombre").addClass("bordeGris")
+                    registrarRoles()
+                }
                 //window.location.href = "/Rol/ViewAgregar"
             })
         })

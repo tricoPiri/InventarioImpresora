@@ -59,4 +59,5 @@ C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\ref
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.pdb
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.genruntimeconfig.cache
 C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\ref\InventarioImpresoras.dll
-C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.csproj.CopyComplete
+C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.sourcelink.json
+C:\inetpub\wwwroot\InventarioImpresora\InventarioImpresoras\obj\Debug\net7.0\Inventar.3A119EB2.Up2Date
