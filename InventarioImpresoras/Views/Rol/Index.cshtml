@@ -546,6 +546,7 @@
                     console.log("response")
                     console.log(response)
                     if (response > 0) {
+                        $("#txtNombre").val("")
                         llenarTablaRoles()
                         swal.fire({
                             icon: "success",
