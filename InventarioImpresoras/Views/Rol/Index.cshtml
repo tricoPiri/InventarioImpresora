@@ -80,7 +80,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
-                                                <button type="button" class="btn btn-primary font-weight-bold" data-dismiss="modal">Registrar</button>
+                                                <button id="btnRegistrar" type="button" class="btn btn-primary font-weight-bold" data-dismiss="modal">Registrar</button>
                                             </div>
                                         <!--</div>-->
                                     </div>
@@ -527,6 +527,48 @@
              return false
          }
          */
+        function registrarRoles() {
+            let nombre = $("#txtNombre").val()
+
+            $.ajax({
+                url: "/Rol/registrar",
+                data: { nombre: nombre },
+                type: "POST",
+                success: function (response) {
+                    console.log("response")
+                    console.log(response)
+                    if (response > 0) {
+                        llenarTablaRoles()
+                        swal.fire({
+                            icon: "success",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok!",
+                            title: "Registro agregado con &eacutexito!",
+                            customClass: {
+                                confirmButton: "btn font-weight-bold btn-light-primary"
+                            }
+                        }).then(function () {
+                            KTUtil.scrollTop();
+                        });
+                        //aki un redirect
+                    }
+                    else {
+                        swal.fire({
+                            icon: "error",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok!",
+                            title: "Ocurrio un error!",
+                            text: "Contacta a tu administrador",
+                            customClass: {
+                                confirmButton: "btn font-weight-bold btn-light-primary"
+                            }
+                        }).then(function () {
+                            KTUtil.scrollTop();
+                        });
+                    }
+                }
+            })
+        }
         $(document).ready(function () {
             //idRolEmpleadoSesion = $("#txtRolIdEmpleadoSesion").val()
             $('#tablaRoles').DataTable();
@@ -538,7 +580,9 @@
                 $("#cardBody").css("visibility", "visible");
             }, "500");
 
-            $("#btnAgregar").click(function () {
+            $("#btnRegistrar").click(function () {
+                console.log("llego al evento")
+                registrarRoles()
                 //window.location.href = "/Rol/ViewAgregar"
             })
         })
