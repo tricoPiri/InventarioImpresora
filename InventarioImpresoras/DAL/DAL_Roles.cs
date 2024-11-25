@@ -42,5 +42,32 @@ namespace InventarioImpresoras.DAL
             }
             return listaRoles;
         }
+
+        public decimal registrar(string nombre)
+        {
+            decimal resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spInsertarRoles", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@nombre", nombre);
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
+
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (decimal)(dr["idRol"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
     }
 }

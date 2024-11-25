@@ -28,5 +28,23 @@ namespace InventarioImpresoras.Controllers
             }
             return Json(listaRoles);
         }
+
+        [Authorize(Roles = "1")]
+        public decimal registrar(string nombre)
+        {
+            decimal resultado = 0;
+            try
+            {
+                DAL_Roles objRoles = new DAL_Roles();
+                resultado = objRoles.registrar(nombre);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
     }
 }
