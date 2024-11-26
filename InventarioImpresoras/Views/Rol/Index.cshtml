@@ -95,6 +95,33 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="modalEditarRol" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable modal" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar roles</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <i aria-hidden="true" class="ki ki-close"></i>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!--<div data-scroll="true" data-height="650" style="height: 200px !important">-->
+                                        <div class="form-group row fv-plugins-icon-container">
+                                            <div class="col-lg-12">
+                                                <label>Nombre:</label>
+                                                <span class="text-danger">*</span>
+                                                <input id="txtNombre" name="Nombre" type="text" class="form-control" placeholder="Ingresar nombre">
+                                                <div class="fv-plugins-message-container"></div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
+                                            <button id="btnGuardar" type="button" class="btn btn-primary font-weight-bold">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                         <!--INICIO DESCARTAR-->
                     </div>
@@ -133,10 +160,8 @@
                                     let opciones = ''
                                     console.log("idUsuario: \n")
                                     console.log(data.idRol)
-                                    //opciones += '<form method="POST" action="/Usuario/ViewEditar?Emp=' + data.empleado_Id + '" style="display:inline;">'
-                                    opciones += '<form method="POST" action="/Usuario/ViewEditar?Usuario=' + data.idRol + '" style="display:inline;">'
-                                    //opciones += '   <input type="text" value=' + data.empleado_Id + ' style="display:none;"/>'
-                                    opciones += '   <button type="submit" style="color:black;" class="btn btn-icon btn-light btn-sm">'
+
+                                                    opciones += '   <button type="button" style="color:black;" class="btn btn-icon btn-light btn-sm" data-toggle="modal" data-target="#modalEditarRol" >'
                                     opciones += '       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'
                                     opciones += '           <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>'
                                     opciones += '       </svg>'
