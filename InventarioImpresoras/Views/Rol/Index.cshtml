@@ -53,6 +53,7 @@
                                         <thead class="theadDataTable">
                                             <tr>
                                                 <th>Nombre</th>
+                                                <th>Estatus</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -156,6 +157,19 @@
                         responsive: true,
                         "columns": [
                             { "data": "rol" },
+                            {
+                                "data": function (data) {
+                                    let opciones = ''
+                                    
+                                    if (data.activo == true) {
+                                        opciones += '<span class="label label-lg label-light-success label-inline" style="color: black;">Activo</span>'
+                                    } else {
+                                        opciones += '<span class="label label-lg label-light-danger label-inline" style="color: black;">Inactivo</span>'
+                                    }
+                                    return opciones
+                                    
+                                }
+                            },
                             {
                                 "data": function (data) {
                                     let opciones = ''
