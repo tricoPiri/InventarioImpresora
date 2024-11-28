@@ -87,7 +87,7 @@
                                                 <div class="fv-plugins-message-container"></div></div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
+                                                <button id="btnCerrarModalRegistrar" type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
                                                 <button id="btnRegistrar" type="button" class="btn btn-primary font-weight-bold">Registrar</button>
                                             </div>
                                         <!--</div>-->
@@ -116,7 +116,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <input id="txtIdRol" type="hidden"/>
-                                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
+                                            <button id="btnCerrarModalEditar" type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
                                             <button id="btnEditar" type="button" class="btn btn-primary font-weight-bold">Editar</button>
                                         </div>
                                     </div>
@@ -572,6 +572,7 @@
                     console.log("response")
                     console.log(response)
                     if (response > 0) {
+                        $("#btnCerrarModalRegistrar").click()
                         $("#txtNombre").val("")
                         llenarTablaRoles()
                         swal.fire({
@@ -616,6 +617,7 @@
                     console.log(response)
                     if (response > 0) {
                         $("#txtNombreEditar").val("")
+                        $("#btnCerrarModalEditar").click()
                         llenarTablaRoles()
                         swal.fire({
                             icon: "success",
@@ -628,7 +630,6 @@
                         }).then(function () {
                             KTUtil.scrollTop();
                         });
-                        //aki un redirect
                     }
                     else {
                         swal.fire({
