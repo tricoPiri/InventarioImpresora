@@ -189,7 +189,7 @@
                                         opciones += '       </svg>'
                                         opciones += '   </button>'
                                     } else {
-                                        opciones += '   <button data-usuarioId="' + data.idRol + '" data-empleadoId="0" data-nombre="0" data-numeroEmp="0" data-parentescoId="0" data-dependencia="0" style="color:black;" class="btn btn-icon btn-light btn-sm" onclick="mostrarMensajeActivar(this); return false;">'
+                                        opciones += '   <button data-rolId="' + data.idRol + '" data-empleadoId="0" data-nombre="0" data-numeroEmp="0" data-parentescoId="0" data-dependencia="0" style="color:black;" class="btn btn-icon btn-light btn-sm" onclick="mostrarMensajeActivar(this); return false;">'
                                         opciones += ' <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">'
                                         opciones += '   <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>'
                                         opciones += '   <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>'
@@ -271,8 +271,8 @@
         function mostrarMensajeActivar(elemento) {
             //alert("si llego a la funcion")
 
-            let idUsuario = $(elemento).attr("data-usuarioId")
-            console.log("idUsuario: " + idUsuario)
+            let idRol = $(elemento).attr("data-rolId")
+            console.log("idRol: " + idRol)
             //INICIO
 
             Swal.fire({
@@ -288,12 +288,12 @@
                 if (result.isConfirmed) {
 
                     $.ajax({
-                        url: "/Usuario/ActivarUsuario",
-                        data: { idUsuario: idUsuario },
+                        url: "/Rol/ActivarRol",
+                        data: { idRol: idRol },
                         type: "POST",
                         success: function (response) {
                             if (response > 0) {
-                                llenarTablaUsuarios()
+                                llenarTablaRoles()
                                 swal.fire({
                                     icon: "success",
                                     buttonsStyling: false,

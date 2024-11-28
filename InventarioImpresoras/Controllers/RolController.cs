@@ -81,5 +81,22 @@ namespace InventarioImpresoras.Controllers
 
             return resultado;
         }
+        [Authorize(Roles = "1")]
+        public int ActivarRol(int idRol)
+        {
+            int resultado = 0;
+            try
+            {
+                DAL_Roles objRol = new DAL_Roles();
+                resultado = objRol.activar(idRol);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
     }
 }
