@@ -9,8 +9,8 @@ namespace InventarioImpresoras.DAL
         {
             try
             {
-                //conexion = new SqlConnection("Server=DRAGONASUS\\SQLEXPRESS; Database=InventarioImpresoras;Integrated Security=true;");
-                conexion = new SqlConnection("Server=DESKTOP-KU8S138\\SQLEXPRESS; Database=InventarioImpresoras;Integrated Security=true;");
+                conexion = new SqlConnection("Server=DRAGONASUS\\SQLEXPRESS; Database=InventarioImpresoras;Integrated Security=true;");
+                //conexion = new SqlConnection("Server=DESKTOP-KU8S138\\SQLEXPRESS; Database=InventarioImpresoras;Integrated Security=true;");
             }
             catch (Exception ex)
             {

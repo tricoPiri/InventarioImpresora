@@ -110,13 +110,13 @@
                                             <div class="col-lg-12">
                                                 <label>Nombre:</label>
                                                 <span class="text-danger">*</span>
-                                                <input id="txtNombre" name="Nombre" type="text" class="form-control" placeholder="Ingresar nombre">
+                                                <input id="txtNombreEditar" name="txtNombreEditar" type="text" class="form-control" placeholder="Ingresar nombre">
                                                 <div class="fv-plugins-message-container"></div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
-                                            <button id="btnGuardar" type="button" class="btn btn-primary font-weight-bold">Guardar</button>
+                                            <button id="btnEditar" type="button" class="btn btn-primary font-weight-bold">Editar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -606,6 +606,7 @@
 
          function obtenerDatosRol(idRol, rol){
              console.log("id rol que llego idRol" + idRol + "rol: " + rol)
+            $("#txtNombreEditar").val(rol)
                 
          }
 
@@ -621,8 +622,7 @@
             }, "500");
 
             $("#btnRegistrar").click(function () {
-                console.log("llego al evento")
-
+                
                 if($("#txtNombre").val() == '')
                 {
                      console.log("en el if")
@@ -637,6 +637,24 @@
                 }
                 //window.location.href = "/Rol/ViewAgregar"
             })
+
+            $("#btnEditar").click(function () {
+                
+                if($("#txtNombreEditar").val() == '')
+                {
+                     console.log("en el if de editar")
+                    $("#txtNombreEditar").addClass("bordeRojo")
+                   
+                }
+                else
+                {
+                    console.log("en el else de editar")
+                    $("#txtNombreEditar").addClass("bordeGris")
+                    EditarRol()
+                }
+                //window.location.href = "/Rol/ViewAgregar"
+            })
+
         })
     </script>
 }
