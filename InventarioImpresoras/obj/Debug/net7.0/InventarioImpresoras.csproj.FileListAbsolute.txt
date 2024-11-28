@@ -127,4 +127,3 @@ C:\inetpub\wwwroot\ProyectoInventario\InventarioImpresoras\obj\Debug\net7.0\refi
 C:\inetpub\wwwroot\ProyectoInventario\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.pdb
 C:\inetpub\wwwroot\ProyectoInventario\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.genruntimeconfig.cache
 C:\inetpub\wwwroot\ProyectoInventario\InventarioImpresoras\obj\Debug\net7.0\ref\InventarioImpresoras.dll
-C:\inetpub\wwwroot\ProyectoInventario\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt
