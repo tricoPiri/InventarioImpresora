@@ -115,6 +115,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
+                                            <input id="txtIdRol" type="hidden"/>
                                             <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
                                             <button id="btnEditar" type="button" class="btn btn-primary font-weight-bold">Editar</button>
                                         </div>
@@ -603,9 +604,53 @@
                 }
             })
         }
+        function editarRol() {
+            let nombre = $("#txtNombreEditar").val()
+            let idRol = $("#txtIdRol").val()
+            $.ajax({
+                url: "/Rol/editar",
+                data: { idRol: idRol, nombre: nombre },
+                type: "POST",
+                success: function (response) {
+                    console.log("response")
+                    console.log(response)
+                    if (response > 0) {
+                        $("#txtNombreEditar").val("")
+                        llenarTablaRoles()
+                        swal.fire({
+                            icon: "success",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok!",
+                            title: "Registro editado con &eacutexito!",
+                            customClass: {
+                                confirmButton: "btn font-weight-bold btn-light-primary"
+                            }
+                        }).then(function () {
+                            KTUtil.scrollTop();
+                        });
+                        //aki un redirect
+                    }
+                    else {
+                        swal.fire({
+                            icon: "error",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok!",
+                            title: "Ocurrio un error!",
+                            text: "Contacta a tu administrador",
+                            customClass: {
+                                confirmButton: "btn font-weight-bold btn-light-primary"
+                            }
+                        }).then(function () {
+                            KTUtil.scrollTop();
+                        });
+                    }
+                }
+            })
+        }
 
          function obtenerDatosRol(idRol, rol){
              console.log("id rol que llego idRol" + idRol + "rol: " + rol)
+            $("#txtIdRol").val(idRol)
             $("#txtNombreEditar").val(rol)
                 
          }
@@ -650,7 +695,7 @@
                 {
                     console.log("en el else de editar")
                     $("#txtNombreEditar").addClass("bordeGris")
-                    EditarRol()
+                    editarRol()
                 }
                 //window.location.href = "/Rol/ViewAgregar"
             })
