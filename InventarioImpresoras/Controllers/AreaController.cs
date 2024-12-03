@@ -64,5 +64,39 @@ namespace InventarioImpresoras.Controllers
 
             return resultado;
         }
+
+        [Authorize(Roles = "1")]
+        public int DesactivarArea(int idArea)
+        {
+            int resultado = 0;
+            try
+            {
+                //DAL_Roles objRol = new DAL_Roles();
+                resultado = objArea.desactivar(idArea);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
+        [Authorize(Roles = "1")]
+        public int ActivarArea(int idArea)
+        {
+            int resultado = 0;
+            try
+            {
+                resultado = objArea.activar(idArea);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
     }
 }

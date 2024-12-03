@@ -98,14 +98,14 @@ namespace InventarioImpresoras.DAL
             }
             return resultado;
         }
-        public int desactivar(int idRol)
+        public int desactivar(int idArea)
         {
             int resultado = 0;
             try
             {
-                SqlCommand sqlCmd = new SqlCommand("spDesactivarRol", objConexion.conexion);
+                SqlCommand sqlCmd = new SqlCommand("spDesactivarArea", objConexion.conexion);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@IdRol", idRol);
+                sqlCmd.Parameters.AddWithValue("@IdArea", idArea);
 
                 SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
                 DataTable dt = new DataTable();
@@ -124,14 +124,14 @@ namespace InventarioImpresoras.DAL
             }
             return resultado;
         }
-        public int activar(int idRol)
+        public int activar(int idArea)
         {
             int resultado = 0;
             try
             {
-                SqlCommand sqlCmd = new SqlCommand("spActivarRol", objConexion.conexion);
+                SqlCommand sqlCmd = new SqlCommand("spActivarArea", objConexion.conexion);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@IdRol", idRol);
+                sqlCmd.Parameters.AddWithValue("@IdArea", idArea);
 
                 SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
                 DataTable dt = new DataTable();
