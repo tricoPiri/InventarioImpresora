@@ -235,7 +235,6 @@ C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\Inventario
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.MvcApplicationPartsAssemblyInfo.cache
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.RazorAssemblyInfo.cache
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.RazorAssemblyInfo.cs
-C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.sourcelink.json
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.build.json
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\staticwebassets.development.json
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\staticwebassets\msbuild.InventarioImpresoras.Microsoft.AspNetCore.StaticWebAssets.props
@@ -246,9 +245,9 @@ C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\staticweba
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\scopedcss\bundle\InventarioImpresoras.styles.css
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\scopedcss\projectbundle\InventarioImpresoras.bundle.scp.css
-C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\Inventar.3A119EB2.Up2Date
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.dll
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\refint\InventarioImpresoras.dll
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.pdb
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.genruntimeconfig.cache
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\ref\InventarioImpresoras.dll
+C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.csproj.CopyComplete

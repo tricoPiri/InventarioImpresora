@@ -47,5 +47,22 @@ namespace InventarioImpresoras.Controllers
 
             return resultado;
         }
+
+        [Authorize(Roles = "1")]
+        public int editar(int idArea, string nombre)
+        {
+            int resultado = 0;
+            try
+            {
+                resultado = objArea.editar(idArea, nombre);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
     }
 }
