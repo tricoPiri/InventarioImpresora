@@ -73,7 +73,7 @@
                             <div class="modal-dialog modal-dialog-scrollable modal" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Registrar roles</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Registrar areas</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <i aria-hidden="true" class="ki ki-close"></i>
                                         </button>
@@ -575,11 +575,11 @@
              return false
          }
          */
-        function registrarRoles() {
+        function registrarAreas() {
             let nombre = $("#txtNombre").val()
 
             $.ajax({
-                url: "/Rol/registrar",
+                url: "/Area/registrar",
                 data: { nombre: nombre },
                 type: "POST",
                 success: function (response) {
@@ -685,15 +685,13 @@
                 
                 if($("#txtNombre").val() == '')
                 {
-                     console.log("en el if")
                     $("#txtNombre").addClass("bordeRojo")
                    
                 }
                 else
                 {
-                    console.log("en el else")
                     $("#txtNombre").addClass("bordeGris")
-                    registrarRoles()
+                    registrarAreas()
                 }
                 //window.location.href = "/Rol/ViewAgregar"
             })
