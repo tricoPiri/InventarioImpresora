@@ -44,32 +44,32 @@ namespace InventarioImpresoras.DAL
             return listaMarcas;
         }
 
-        //public decimal registrar(string nombre)
-        //{
-        //    decimal resultado = 0;
-        //    try
-        //    {
-        //        SqlCommand sqlCmd = new SqlCommand("spInsertarRoles", objConexion.conexion);
-        //        sqlCmd.CommandType = CommandType.StoredProcedure;
-        //        sqlCmd.Parameters.AddWithValue("@nombre", nombre);
+        public decimal registrar(string nombre)
+        {
+            decimal resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spInsertarMarcas", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@nombre", nombre);
 
-        //        SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
-        //        DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
 
-        //        objConexion.conexion.Open();
-        //        da.Fill(dt);
-        //        foreach (DataRow dr in dt.Rows)
-        //        {
-        //            resultado = (decimal)(dr["idRol"]);
-        //        }
-        //        objConexion.conexion.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        DAL_Utilerias.FormatoExcepcion(ex);
-        //    }
-        //    return resultado;
-        //}
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (decimal)(dr["idMarca"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
 
         //public int editar(int idRol, string nombre)
         //{

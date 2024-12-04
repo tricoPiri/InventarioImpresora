@@ -30,5 +30,22 @@ namespace InventarioImpresoras.Controllers
             return Json(listaMarcas);
         }
 
+        [Authorize(Roles = "1")]
+        public decimal registrar(string nombre)
+        {
+            decimal resultado = 0;
+            try
+            {
+                resultado = objMarca.registrar(nombre);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
+
     }
 }
