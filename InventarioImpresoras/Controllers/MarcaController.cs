@@ -63,6 +63,38 @@ namespace InventarioImpresoras.Controllers
 
             return resultado;
         }
+        [Authorize(Roles = "1")]
+        public int DesactivarMarca(int idMarca)
+        {
+            int resultado = 0;
+            try
+            {
+                resultado = objMarca.desactivar(idMarca);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
+        [Authorize(Roles = "1")]
+        public int ActivarMarca(int idMarca)
+        {
+            int resultado = 0;
+            try
+            {
+                resultado = objMarca.activar(idMarca);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
 
     }
 }
