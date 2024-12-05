@@ -576,11 +576,11 @@
              return false
          }
          */
-        function registrarRoles() {
+        function registrarModelos() {
             let nombre = $("#txtNombre").val()
 
             $.ajax({
-                url: "/Rol/registrar",
+                url: "/Modelo/registrar",
                 data: { nombre: nombre },
                 type: "POST",
                 success: function (response) {
@@ -685,14 +685,12 @@
             $("#btnRegistrar").click(function () {
 
                 if ($("#txtNombre").val() == '') {
-                    console.log("en el if")
                     $("#txtNombre").addClass("bordeRojo")
 
                 }
                 else {
-                    console.log("en el else")
                     $("#txtNombre").addClass("bordeGris")
-                    registrarRoles()
+                    registrarModelos()
                 }
                 //window.location.href = "/Rol/ViewAgregar"
             })

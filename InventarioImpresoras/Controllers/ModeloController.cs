@@ -3,6 +3,7 @@ using InventarioImpresoras.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace InventarioImpresoras.Controllers
 {
@@ -31,23 +32,22 @@ namespace InventarioImpresoras.Controllers
             return Json(listaModelos);
         }
 
-        //[Authorize(Roles = "1")]
-        //public decimal registrar(string nombre)
-        //{
-        //    decimal resultado = 0;
-        //    try
-        //    {
-        //        DAL_Roles objRoles = new DAL_Roles();
-        //        resultado = objRoles.registrar(nombre);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        DAL_Utilerias.FormatoExcepcion(ex);
-        //        return resultado;
-        //    }
+        [Authorize(Roles = "1")]
+        public decimal registrar(string nombre)
+        {
+            decimal resultado = 0;
+            try
+            {
+                resultado = objModelo.registrar(nombre);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
 
-        //    return resultado;
-        //}
+            return resultado;
+        }
 
         //[Authorize(Roles = "1")]
         //public int editar(int idRol, string nombre)
