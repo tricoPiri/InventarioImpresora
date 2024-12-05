@@ -9,6 +9,8 @@ namespace InventarioImpresoras.Controllers
     public class RolController : Controller
     {
         DAL_Roles objRol = new DAL_Roles();
+
+        [Authorize(Roles = "1")]
         public ActionResult Index()
         {
             return View();

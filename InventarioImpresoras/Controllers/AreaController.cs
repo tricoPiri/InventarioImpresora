@@ -10,6 +10,7 @@ namespace InventarioImpresoras.Controllers
     {
         DAL_Areas objArea = new DAL_Areas();
         // GET: AreaController
+        [Authorize(Roles = "1")]
         public ActionResult Index()
         {
             return View();

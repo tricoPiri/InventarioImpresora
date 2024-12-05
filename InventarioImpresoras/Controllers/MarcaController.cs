@@ -10,6 +10,8 @@ namespace InventarioImpresoras.Controllers
     public class MarcaController : Controller
     {
         DAL_Marcas objMarca = new DAL_Marcas();
+
+        [Authorize(Roles = "1")]
         public ActionResult Index()
         {
             return View();

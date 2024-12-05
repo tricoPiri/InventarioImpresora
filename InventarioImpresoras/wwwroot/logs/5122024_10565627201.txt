@@ -1,0 +1,10 @@
+
+
+[Fecha:] jueves, 05 diciembre 2024 10: 56:05
+  [Mensaje Error:] Column 'idModelos' does not belong to table .
+ [InnerException:] 
+ [StackTrace:]    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at InventarioImpresoras.DAL.DAL_Modelos.getModelos()
+
+
