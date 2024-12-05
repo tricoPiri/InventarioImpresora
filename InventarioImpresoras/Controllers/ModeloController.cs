@@ -49,23 +49,22 @@ namespace InventarioImpresoras.Controllers
             return resultado;
         }
 
-        //[Authorize(Roles = "1")]
-        //public int editar(int idRol, string nombre)
-        //{
-        //    int resultado = 0;
-        //    try
-        //    {
-        //        DAL_Roles objRoles = new DAL_Roles();
-        //        resultado = objRoles.editar(idRol, nombre);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        DAL_Utilerias.FormatoExcepcion(ex);
-        //        return resultado;
-        //    }
+        [Authorize(Roles = "1")]
+        public int editar(int idModelo, string nombre)
+        {
+            int resultado = 0;
+            try
+            {
+                resultado = objModelo.editar(idModelo, nombre);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
 
-        //    return resultado;
-        //}
+            return resultado;
+        }
         //[Authorize(Roles = "1")]
         //public int DesactivarRol(int idRol)
         //{
