@@ -1,0 +1,311 @@
+commit 411716d21591e16d5110622ef9a26dcbcb8fb299
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Dec 5 11:55:06 2024 -0600
+
+    respaldo de la base de datos
+
+commit ee351375dd50797eac7da7ef197d407bff90c68f
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Dec 5 11:41:19 2024 -0600
+
+    activar y desactivar modelo del modulo de modelos
+
+commit 4c58d61e1d7750ab69e3069da685fae368cdcfdb
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Dec 5 11:28:07 2024 -0600
+
+    edicion de modelos en el modulo de modelo
+
+commit 77a507870da1434ae5c9746af653ba75b4e69461
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Dec 5 11:15:26 2024 -0600
+
+    registro de modelos en el modulo de modelos
+
+commit 3f749e304f6989975a9f79e73cd172ab823d9d63
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Dec 5 11:02:05 2024 -0600
+
+    consulta de modelos en el modulo de modelo
+
+commit 1548c6e18eab48fd802890f4e3ea0acb0a9d812b
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Wed Dec 4 12:45:07 2024 -0600
+
+    respaldo de la base de datos
+
+commit d7e2f1d738e66a036a76168f944ba6b6a7f30807
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Wed Dec 4 12:39:37 2024 -0600
+
+    activando y desactivando marcas en el modulo de marcas
+
+commit 27f6f4d8cbb8180c6d036e4e00f0aa8b20897061
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Wed Dec 4 12:15:44 2024 -0600
+
+    actualizacion de las marcas en el modulo de marcas
+
+commit 302b0855d74a334e52286328ca99f999067cd966
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Wed Dec 4 11:59:42 2024 -0600
+
+    insercion de marcas en el modulo de marca
+
+commit a64f228f1656c16663361268c35c96025d415d2d
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Wed Dec 4 11:50:17 2024 -0600
+
+    consulta de marcas en el modulo de marcas
+
+commit 9d76f6cb405dc5289e01cd62704c1df6bc03de90
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Tue Dec 3 12:50:23 2024 -0600
+
+    respaldo de la base de datos
+
+commit a2d87f4d50cb7b52e720aa164e9e1c1a54f94e9f
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Tue Dec 3 12:40:43 2024 -0600
+
+    activacion y desactivacion de areas en el modulo de areas
+
+commit e83724f256ad05183e2f667323e757109345f132
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Tue Dec 3 12:12:37 2024 -0600
+
+    edicion de area en el modulo de area
+
+commit f2d5c6784ff4955b63695211d766f97b7a3cb07a
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Tue Dec 3 11:55:31 2024 -0600
+
+    registro de areas en el modulo de areas
+
+commit e1807055196bf2766517f891643db9ca9dc3a972
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Tue Dec 3 11:38:24 2024 -0600
+
+    consulta de areas en el modulo de areas
+
+commit 6d1e40f7a242cc48ed290d63b08086076ed96809
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Mon Dec 2 09:48:48 2024 -0600
+
+    Respaldo de la base de datos
+
+commit e359832a564c56140db180093f2e95863923016b
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 28 12:24:50 2024 -0600
+
+    activando roles en el modulo de roles
+
+commit c88d2929c046e609f5ceee3052d10f24a5cd3b22
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 28 12:11:06 2024 -0600
+
+    desactivando rol en el modulo de roles
+
+commit 24bf248e5d6b73a5875b22406aa66688404c4df2
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 28 12:01:32 2024 -0600
+
+    maquetando iconos de activar y desactivar roles
+
+commit 92a12432a462bd4b521e45cafdccf603cee64bd6
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 28 11:33:34 2024 -0600
+
+    quitando modal cuando registramos o editamos un rol en el modulo de roles
+
+commit f954d79124925d61590a06ac1ae3cd06b8f1d403
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 28 11:19:41 2024 -0600
+
+    edicion de rol en el modulo de roles
+
+commit 6f734fddee9790ce74d5708de491ba9396d80607
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 28 10:50:28 2024 -0600
+
+    obteniendo nombre del rol en la modal de editar rol y haciendo validacion
+
+commit 147e7a3336414f7c0f56424a20ac935dd2ddd034
+Author: santiago <xouldark22@gmail.com>
+Date:   Thu Nov 28 10:28:02 2024 -0600
+
+    clear code
+
+commit e9f27966f084341a48dfcb099b159a674977249c
+Author: santiago <xouldark22@gmail.com>
+Date:   Tue Nov 26 10:13:02 2024 -0600
+
+    pasando idRol y rol en la funcion para mostrar la modal de edicion de rol en modulo de roles
+
+commit 9b51806fab17f8468b6fe203661ab82a61ec490a
+Author: samuel <bcastyyo@gmail.com>
+Date:   Tue Nov 26 09:15:08 2024 -0600
+
+    mostrando modal de editar rol en el modulo de roles
+
+commit 4bf6e9f9d8ae17386d26ed097ef4ba0d82087530
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Mon Nov 25 12:29:18 2024 -0600
+
+    limpiando campo nombre cuando se registra un rol en el modulo de rol
+
+commit c77b4094ee97300dde898a202b5395a57edb7ab3
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Mon Nov 25 12:18:05 2024 -0600
+
+    registro de roles desde modulo de rol con validacion
+
+commit 3eef67694bf3076080bb727f7187644b64ce7df1
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Mon Nov 25 11:58:51 2024 -0600
+
+    registro de roles desde modulo de rol sin validacion
+
+commit 673db39db1425a30b0226b61ef3fc595f1a0a396
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Mon Nov 25 11:50:21 2024 -0600
+
+    maquetacion de la ventana modal para registrar roles en modulo de roles
+
+commit 93bf4016e807e593086221377833f62ff2ac1440
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Mon Nov 25 11:13:44 2024 -0600
+
+    consulta de roles en modulo de rol
+
+commit 81737b5408571db6308e7219f6cc687db2e85f5e
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 21 12:12:18 2024 -0600
+
+    activando usuarios
+
+commit ed4a36847f49ca4e071c4d911864f6395775bd8e
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 21 11:41:23 2024 -0600
+
+    Desactivacion de usuarios
+
+commit 513bac9fed01af0ab2511b81ae8f7198c330f197
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Wed Nov 20 11:50:12 2024 -0600
+
+    actualizacion de usuarios
+
+commit 29b0d157a34116e38c5235efda37749d1bfab7da
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Thu Nov 14 11:53:24 2024 -0600
+
+    mostrando rol del usuario en la view de editar usuario
+
+commit 4ab30b371744ab37a2814a0e195c6c84c7dc25ef
+Author: Carlos Manuel <carlosm.garciaa20@gmail.com>
+Date:   Wed Nov 13 12:33:01 2024 -0600
+
+    cambio en archivo de conexion
+
+commit 4986207bb2dea5a19e25afd72520a89b5e32a92c
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Wed Nov 13 11:37:05 2024 -0600
+
+    ultimo commit
+
+commit e40f4961c19af5fe5c5492fa46775b65eaab08de
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Tue Nov 12 12:18:18 2024 -0600
+
+    script de la BD, actualizacion de usuarios
+
+commit eacd048e408185bcf5b2645cfccb0b5a8bd2b135
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Tue Nov 12 12:14:33 2024 -0600
+
+    inicio con la actualizacion de usuarios
+
+commit 5433ef852cd7fe02c4fd020ea133ee5f2e8a2fa5
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Tue Nov 12 08:05:40 2024 -0600
+
+    maquetacion de la interfaz para registrar usuarios
+
+commit b49a0ee860c388d06257caad38310b7370ec40d7
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Mon Nov 11 15:59:15 2024 -0600
+
+    respaldo de la BD
+
+commit 92627c61498eaa33328a2863f48615a7d7cd5a61
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Mon Nov 11 15:55:51 2024 -0600
+
+    haciendo pruebas de fondo de login
+
+commit a412c2bc19318653295438c350ef2eb1705b942c
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Mon Nov 11 15:27:33 2024 -0600
+
+    agregando carpeta bin al .gitignore
+
+commit 67d5c820892ad17b70af92b092b313d31b98a4d3
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Mon Nov 11 15:24:08 2024 -0600
+
+    mostrando roles de manera dinamica, al registrar usuarios
+
+commit c44e5648e527a3228306359fcdb89aac09688a90
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Mon Nov 11 14:36:57 2024 -0600
+
+    agregando archivo .gitignore
+
+commit 4c79c16c224ed2e4b7e20d8bd68274f336951bea
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Mon Nov 11 14:25:54 2024 -0600
+
+    mostrando usuarios activos e inactivos
+
+commit cd2bb0cc7538643d6764868e6bfd45cfc9bb4247
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Fri Nov 8 16:10:00 2024 -0600
+
+    logos en el menu
+
+commit 72954ff7013f5f61e932a13c0568cd92669c8725
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Thu Nov 7 15:53:54 2024 -0600
+
+    con respaldo de la BD
+
+commit f976e3aacf0be7bf8f45d39bbd2e12246fc1e8f8
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Thu Nov 7 15:51:32 2024 -0600
+
+    declaracion de modelos
+
+commit 5dc392fdcaf30c3943d3cf3a74c5b385d42bf998
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Thu Nov 7 15:11:51 2024 -0600
+
+    eliminando carpeta home
+
+commit 2c8420dd53804ecfcf4c149751b18da6fa8301b5
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Thu Nov 7 10:04:31 2024 -0600
+
+    Inicio de de sesion en local
+
+commit 54a544f3695bb512a13f0edd67c5d6f4852aaefd
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Wed Nov 6 15:39:36 2024 -0600
+
+    maquetacion del login demo
+
+commit 9c663b8d7785a413b0ccd6d9b54b5c63d5aa65a5
+Author: Irineo Antonio Calderon Aguilar <irineo.calderon@asetam.local>
+Date:   Wed Nov 6 13:09:21 2024 -0600
+
+    primer commit
