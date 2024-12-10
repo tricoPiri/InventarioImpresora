@@ -173,7 +173,10 @@
                         }).then(function () {
                             KTUtil.scrollTop();
                         });
-                        //aki un redirect
+                        setTimeout(function () {
+                            window.location = "/Impresora/"
+                        },
+                            3000);
                     }
                     else {
                         swal.fire({
