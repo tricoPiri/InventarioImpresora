@@ -22,12 +22,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/inetpub/wwwroot/nuevo_martes/InventarioImpresoras/Views/Impresora/Agregar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wcmVzb3JhXEFncmVnYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/inetpub/wwwroot/nuevo_martes/InventarioImpresoras/Views/Impresora/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wcmVzb3JhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/inetpub/wwwroot/nuevo_martes/InventarioImpresoras/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/inetpub/wwwroot/nuevo_martes/InventarioImpresoras/Views/Marca/Agregar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcQWdyZWdhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/inetpub/wwwroot/nuevo_martes/InventarioImpresoras/Views/Marca/Index.cshtml]

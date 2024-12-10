@@ -29,6 +29,14 @@ namespace InventarioImpresoras.Controllers
             }
             return Json(listaImpresoras);
         }
+        [Authorize(Roles = "1")]
+        public IActionResult ViewAgregar()
+        {
+            //ViewData["Roles"] = objRoles.getRoles();
+            DAL_Marcas objMarcas  = new DAL_Marcas();
+            ViewData["Marcas"] = objMarcas.getMarcas();
+            return View("Agregar");
+        }
     }
 }
 
