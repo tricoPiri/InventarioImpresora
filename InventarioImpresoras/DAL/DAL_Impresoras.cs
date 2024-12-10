@@ -68,5 +68,35 @@ namespace InventarioImpresoras.DAL
             }
             return listaImpresoras;
         }
+        public decimal registrar(string numeroSerie, string nombre, int idMarca, int idModelo, int idArea)
+        {
+            decimal resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spInsertarImpresoras", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@numeroSerie", numeroSerie);
+                sqlCmd.Parameters.AddWithValue("@nombre", nombre);
+                sqlCmd.Parameters.AddWithValue("@idMarca", idMarca);
+                sqlCmd.Parameters.AddWithValue("@idModelo", idModelo);
+                sqlCmd.Parameters.AddWithValue("@idArea", idArea);
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
+
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (decimal)(dr["idImpresora"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
     }
 }

@@ -7,27 +7,71 @@ var KTFormControls = function () {
 			document.getElementById('kt_form_1'),
 			{
 				fields: {
-					//Empleado: {
-					//	validators: {
-					//		notEmpty: {
-					//			message: 'El empleado es requerido'
-					//		}
-					//	}
-					//},
-					NumeroIPSSET: {
+					NumeroSerie: {
 						validators: {
 							notEmpty: {
-								message: 'El n&uacute;mero del IPSSET es requerido'
+								message: 'N&uacutemero de serie es requerido'
 							}
 						}
 					},
-					NumeroAfiliacion: {
+					Nombre: {
 						validators: {
 							notEmpty: {
-								message: 'El n&uacute;mero de afiliaci&oacute;n requerido'
+								message: 'El nombre es requerido'
 							}
 						}
 					},
+					Marca: {
+						validators: {
+							notEmpty: {
+								message: 'La marca es requerida'
+							}
+						}
+					},
+					Modelo: {
+						validators: {
+							notEmpty: {
+								message: 'El modelo es requerido'
+							}
+						}
+					},
+					Area: {
+						validators: {
+							notEmpty: {
+								message: 'El &aacuterea es requerido'
+							}
+						}
+					}
+					/*,
+					ApellidoMaterno: {
+						validators: {
+							notEmpty: {
+								message: 'El apellido materno es requerido'
+							}
+						}
+					},
+					Usuario: {
+						validators: {
+							notEmpty: {
+								message: 'El usuario es requerido'
+							}
+						}
+					},
+					Password: {
+						validators: {
+							notEmpty: {
+								message: 'La contrase&ntilde;a es requerido'
+							}
+						}
+					},
+					Rol: {
+						validators: {
+							notEmpty: {
+								message: 'El rol es requerido'
+							}
+						}
+					}
+					*/
 				},
 
 				plugins: { //Learn more: https://formvalidation.io/guide/plugins
@@ -58,13 +102,11 @@ var KTFormControls = function () {
 function validarCampos()
 {	
 	validation.validate().then(function (status) {
-
 		if (status == 'Valid')
 		{
-			//editarAfiliacionEmpleado()
-		}
-		else
-		{
+			registrarImpresora()
+			
+		} else {
 			Swal.fire({
 				title: "Debes de capturar los campos obligatorios!",
 				icon: "warning",

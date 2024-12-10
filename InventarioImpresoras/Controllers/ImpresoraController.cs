@@ -43,6 +43,23 @@ namespace InventarioImpresoras.Controllers
 
             return View("Agregar");
         }
+
+        [Authorize(Roles = "1")]
+        public decimal registrar(string numeroSerie, string nombre, int idMarca, int idModelo, int idArea)
+        {
+            decimal resultado = 0;
+            try
+            {
+                resultado = objImpresora.registrar(numeroSerie, nombre, idMarca, idModelo,  idArea);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
     }
 }
 

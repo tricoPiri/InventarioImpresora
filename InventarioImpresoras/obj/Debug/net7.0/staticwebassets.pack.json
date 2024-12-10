@@ -1561,38 +1561,6 @@
       "PackagePath": "staticwebassets\\js\\utilerias.js"
     },
     {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarAfiliacionEmpleado.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarAfiliacionEmpleado.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarAfiliacionEmpleado.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarAfiliacionEmpleado.min.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarExperienciaLaboral.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarExperienciaLaboral.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarExperienciaLaboral.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarExperienciaLaboral.min.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarFamiliaConyugue.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarFamiliaConyugue.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarFamiliaConyugue.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarFamiliaConyugue.min.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarHijo.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarHijo.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarHijo.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\editarHijo.min.js"
-    },
-    {
       "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarUsuario.js",
       "PackagePath": "staticwebassets\\js\\validaciones\\editarUsuario.js"
     },
@@ -1601,44 +1569,12 @@
       "PackagePath": "staticwebassets\\js\\validaciones\\editarUsuario.min.js"
     },
     {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarAfiliacionEmpleado.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarAfiliacionEmpleado.js"
+      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarImpresora.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\registrarImpresora.js"
     },
     {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarAfiliacionEmpleado.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarAfiliacionEmpleado.min.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarContratoEmpleado.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarContratoEmpleado.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarContratoEmpleado.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarContratoEmpleado.min.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarExperienciaLaboral.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarExperienciaLaboral.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarExperienciaLaboral.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarExperienciaLaboral.min.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarFamiliaConyugue.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarFamiliaConyugue.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarFamiliaConyugue.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarFamiliaConyugue.min.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarReingresoEmpleado.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarReingresoEmpleado.js"
-    },
-    {
-      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarReingresoEmpleado.min.js",
-      "PackagePath": "staticwebassets\\js\\validaciones\\registrarReingresoEmpleado.min.js"
+      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarImpresora.min.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\registrarImpresora.min.js"
     },
     {
       "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarUsuario.js",
@@ -1879,6 +1815,14 @@
     {
       "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\logs\\10122024_1311976677.txt",
+      "PackagePath": "staticwebassets\\logs\\10122024_1311976677.txt"
+    },
+    {
+      "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\logs\\10122024_1323323527.txt",
+      "PackagePath": "staticwebassets\\logs\\10122024_1323323527.txt"
     },
     {
       "Id": "C:\\inetpub\\wwwroot\\nuevo_martes\\InventarioImpresoras\\wwwroot\\logs\\13112024_115650366986.txt",
