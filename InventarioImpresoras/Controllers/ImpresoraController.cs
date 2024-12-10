@@ -32,9 +32,12 @@ namespace InventarioImpresoras.Controllers
         [Authorize(Roles = "1")]
         public IActionResult ViewAgregar()
         {
-            //ViewData["Roles"] = objRoles.getRoles();
             DAL_Marcas objMarcas  = new DAL_Marcas();
+            DAL_Modelos objModelos = new DAL_Modelos();
+            
             ViewData["Marcas"] = objMarcas.getMarcas();
+            ViewData["Modelos"] = objModelos.getModelos();
+
             return View("Agregar");
         }
     }
