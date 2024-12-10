@@ -1,4 +1,5 @@
-﻿using InventarioImpresoras.DAL;
+﻿using System.Linq.Expressions;
+using InventarioImpresoras.DAL;
 using InventarioImpresoras.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -34,9 +35,11 @@ namespace InventarioImpresoras.Controllers
         {
             DAL_Marcas objMarcas  = new DAL_Marcas();
             DAL_Modelos objModelos = new DAL_Modelos();
+            DAL_Areas objAreas = new DAL_Areas();
             
             ViewData["Marcas"] = objMarcas.getMarcas();
             ViewData["Modelos"] = objModelos.getModelos();
+            ViewData["Areas"] = objAreas.getAreas();
 
             return View("Agregar");
         }
