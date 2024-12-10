@@ -15,7 +15,7 @@
                         <div>
                             <div class="card-header">
                                 <div class="card-title">
-                                    <h3 class="card-label">Consulta de usuarios</h3>
+                                    <h3 class="card-label">Consulta de impresora</h3>
                                 </div>
                                 <div id="cardBody" class="card-body" style="visibility:hidden;position: relative;z-index: 1;text-align: center;">
                                     <div id="spinner" class="spinner-border" role="status" style="visibility: visible;position: absolute;z-index: 1;top: 40%;">
@@ -28,14 +28,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <table id="tablaUsuarios" class="table table-bordered table-hover" style="text-align:center !important;  cursor: pointer !important;">
+                                    <table id="tablaImpresoras" class="table table-bordered table-hover" style="text-align:center !important;  cursor: pointer !important;">
                                         <thead class="theadDataTable">
                                             <tr>
-                                                <th>Nombre completo</th>
-                                                <th>Apellido paterno</th>
-                                                <th>Apellido materno</th>
-                                                <th>Usuario</th>
-                                                <th>Rol</th>
+                                                <th>Número de serie</th>
+                                                <th>Nombre</th>
+                                                <th>Marca</th>
+                                                <th>Modelo</th>
+                                                <th>Area</th>
                                                 <th>Estatus</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -147,15 +147,15 @@
     <script src="~/js/dataTable/jquery.dataTables.min.js"></script>
     <script src="~/js/dataTable/dataTables.bootstrap5.min.js"></script>
     <script>
-        function llenarTablaUsuarios() {
+        function llenarTablaImpresoras() {
             $.ajax({
-                url: "/Usuario/ConsultarUsuarios",
+                url: "/Impresora/ConsultarImpresoras",
                 type: "POST",
                 success: function (response) {
                     console.log("response: \n")
                     console.log(response)
 
-                    $("#tablaUsuarios").DataTable({
+                    $("#tablaImpresoras").DataTable({
                         order: [[0, 'desc']],
                         destroy: true,
                         data: response,
@@ -165,13 +165,21 @@
                         },
                         responsive: true,
                         "columns": [
-                            { "data": "nombres" },
-                            { "data": "apellidoPaterno" },
-                            { "data": "apellidoMaterno" },
-                            { "data": "usuario" },
+                            { "data": "numeroSerie" },
+                            { "data": "nombre" },
                             {
                                 "data": function (data) {
-                                    return data.roles[0].rol
+                                    return data.marcas[0].nombre
+                                }
+                            },
+                            {
+                                "data": function (data) {
+                                    return data.modelos[0].nombre
+                                }
+                            },
+                            {
+                                "data": function (data) {
+                                    return data.areas[0].nombre
                                 }
                             },
                             {
@@ -187,6 +195,7 @@
 
                                 }
                             },
+                            /*
                             {
                                 "data": function (data) {
                                     let opciones = ''
@@ -208,6 +217,7 @@
                                     return opciones
                                 }
                             }
+                            */
                         ],
                     });
                 }
@@ -519,9 +529,9 @@
          */
         $(document).ready(function () {
             //idRolEmpleadoSesion = $("#txtRolIdEmpleadoSesion").val()
-            $('#tablaUsuarios').DataTable();
+            $('#tablaImpresoras').DataTable();
 
-            llenarTablaUsuarios()
+            llenarTablaImpresoras()
 
             setTimeout(() => {
                 $("#spinner").hide();

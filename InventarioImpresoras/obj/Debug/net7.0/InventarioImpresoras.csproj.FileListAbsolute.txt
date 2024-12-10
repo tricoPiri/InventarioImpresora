@@ -250,4 +250,5 @@ C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\refint\Inv
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.pdb
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.genruntimeconfig.cache
 C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\ref\InventarioImpresoras.dll
-C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.csproj.CopyComplete
+C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\InventarioImpresoras.sourcelink.json
+C:\inetpub\wwwroot\nuevo_martes\InventarioImpresoras\obj\Debug\net7.0\Inventar.3A119EB2.Up2Date
