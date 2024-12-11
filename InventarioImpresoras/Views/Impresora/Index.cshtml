@@ -236,13 +236,68 @@
                 }
             })
         }
+        
         //INICIO ACTIVAR
+        function mostrarMensajeActivar(elemento) {
+
+            let idImpresora = $(elemento).attr("data-impresoraId")
+            //INICIO
+            Swal.fire({
+                title: "¿Estas seguro en activar?",
+                //text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si",
+                cancelButtonText: "No"
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: "/Impresora/Activar",
+                        data: { idImpresora: idImpresora },
+                        type: "POST",
+                        success: function (response) {
+                            if (response > 0) {
+                                llenarTablaImpresoras()
+                                swal.fire({
+                                    icon: "success",
+                                    buttonsStyling: false,
+                                    confirmButtonText: "Ok!",
+                                    title: "Registro activado con éxito!",
+                                    customClass: {
+                                        confirmButton: "btn font-weight-bold btn-light-primary"
+                                    }
+                                }).then(function () {
+                                    //KTUtil.scrollTop();
+                                });
+                            } else {
+                                swal.fire({
+                                    icon: "error",
+                                    buttonsStyling: false,
+                                    confirmButtonText: "Ok!",
+                                    title: "Ocurrio un error, por favor contacte a su administrador!",
+                                    customClass: {
+                                        //confirmButton: "btn font-weight-bold btn-light-primary"
+                                    }
+                                }).then(function () {
+                                    KTUtil.scrollTop();
+                                });
+                            }
+                        }
+                    })
+
+                }
+            });
+            //
+        }
         function mostrarMensajeDesactivar(elemento) {
 
             let idImpresora = $(elemento).attr("data-impresoraId")
             //INICIO
             Swal.fire({
-                title: "¿Estas seguro en eliminarlo?",
+                title: "¿Estas seguro en desactivar?",
                 //text: "You won't be able to revert this!",
                 icon: "warning",
                 showCancelButton: true,
@@ -264,7 +319,7 @@
                                     icon: "success",
                                     buttonsStyling: false,
                                     confirmButtonText: "Ok!",
-                                    title: "Registro eliminado con éxito!",
+                                    title: "Registro desactivado con éxito!",
                                     customClass: {
                                         confirmButton: "btn font-weight-bold btn-light-primary"
                                     }
@@ -292,198 +347,6 @@
             //
         }
         //FINAL DESACTIVAR
-        /*
-        function mensajeDesactivar() {
-            Swal.fire({
-                text: "¿Estas seguro en desactivar a este empleado?",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Si, desactivarlo!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Desactivado!",
-                        text: "Empleado desactivado con éxito",
-                        icon: "success"
-                    });
-                }
-            });
-            return false
-        }
-        */
-        /*
-        function consultarDatosGenerales(idEmpleado) {
-            $.ajax({
-                url: "/Empleado/ConsultarEmpleados",
-                data: { idEmpleado: idEmpleado },
-                type: "POST",
-                success: function (response) {
-
-                    if (response.length > 0) {
-                        //Datos Generales
-                        $("#divNombreCompleto").html("<strong>Nombre completo: </strong>" + response[0].nombre + " " + response[0].apellidoPaterno + " " + response[0].apellidoMaterno)
-                        let fechaNacimiento = response[0].fechaNacimiento.split('T')
-                        $("#divFechaNacimiento").html("<strong>Fecha de nacimiento: </strong>" + fechaNacimiento[0].split('-')[2] + "/" + fechaNacimiento[0].split('-')[1] + "/" + fechaNacimiento[0].split('-')[0])
-                        $("#divRFC").html("<strong>RFC: </strong>" + response[0].rfc)
-                        $("#divCURP").html("<strong>CURP: </strong>" + response[0].curp)
-                        let genero = null
-                        if (response[0].genero == 'H') {
-                            genero = "Hombre"
-                        } else if (response[0].genero == 'M') {
-                            genero = "Mujer"
-                        }
-                        $("#divGenero").html("<strong>Genero: </strong>" + genero)
-                        $("#divTipoSangre").html("<strong>Tipo de sangre: </strong>" + response[0].tipoSanguineo[0].tipoSanguineo)
-                        $("#divEstadoCivil").html("<strong>Estado civil: </strong>" + response[0].estadoCivil)
-                        idEstadoCivil = response[0].estadoCivil_Id
-                        //Domicilio
-                        $("#divCalle").html("<strong>Calle: </strong>" + response[0].domicilio[0].calle)
-                        $("#divEntreCalles").html("<strong>Entre calles: </strong>" + response[0].domicilio[0].entreCalles)
-                        $("#divNumeroExterior").html("<strong>Número exterior: </strong>" + response[0].domicilio[0].numeroExterior)
-                        $("#divNumeroInterior").html("<strong>Número interior: </strong>" + response[0].domicilio[0].numeroInterior)
-                        $("#divColonia").html("<strong>Colonia: </strong>" + response[0].domicilio[0].colonia)
-                        if (response[0].domicilio[0].codigoPostal > 0) {
-                            $("#divCodigoPostal").html("<strong>Código postal: </strong>" + response[0].domicilio[0].codigoPostal)
-                        } else {
-                            $("#divCodigoPostal").html("<strong>Código postal: </strong>")
-                        }
-
-                        //profesion y posgrado
-                        if (response[0].profesion[0].profesion_Id > 0) {
-                            $("#divProfesion").show()
-                            $("#divProfesion").html("<strong>Profesion: </strong>" + response[0].profesion[0].profesion)
-
-                            if (response[0].posgrado[0].posgrado_Id > 0) {
-                                $("#divPosgrado").show()
-                                $("#divPosgrado").html("<strong>Posgrado: </strong>" + response[0].posgrado[0].posgrado)
-                            }
-
-                            if (response[0].posgrado[0].posgrado_En_Curso.length > 0) {
-                                $("#divPosgradoEnCurso").show()
-                                $("#divPosgradoEnCurso").html("<strong>Posgrado en curso: </strong>" + response[0].posgrado[0].posgrado_En_Curso)
-                            }
-                        } else {
-                            $("#divCarreraTrunca").show()
-                            $("#divCarreraTrunca").html("<strong>Carrera trunca: </strong>" + response[0].profesion[0].carrera_Trunca)
-
-                        }
-
-                        //contacto
-                        $("#divEmailPersonal").html("<strong>Correo electrónico personal: </strong>" + response[0].contacto[0].correoElectronico)
-                        $("#divEmailInstitucional").html("<strong>Correo electrónico institucional: </strong>" + response[0].contacto[0].correoElectronicoInstitucional)
-                        $("#divTelefonoCasa").html("<strong>Teléfono de casa: </strong>" + response[0].contacto[0].telefono_Casa)
-                        $("#divTelefonoMovil").html("<strong>Teléfono de móvil: </strong>" + response[0].contacto[0].telefono_Movil)
-
-                        //conyugue
-                        //divEstadoCivil
-                        //estadoCivil_Id
-
-                        //hijos
-                        if (response[0].tieneHijos == true) {
-                            $("#divTieneHijos").html("<strong>Tiene hijos: </strong> Si")
-                        } else {
-                            $("#divTieneHijos").html("<strong>Tiene hijos: </strong> No")
-                        }
-
-                    }
-                }
-            })
-        }
-        */
-        /*
-         function consultarContactoEmergencia(idEmpleado) {
-             $.ajax({
-                 url: "/Empleado/ConsultarContactoEmergencia",
-                 data: { idEmpleado: idEmpleado },
-                 type: "POST",
-                 success: function (response) {
-                     if (response.length > 0) {
-                         $("#divNombreContactoEmergencia").html("<strong>Nombre completo: </strong>" + response[0].nombre)
-                         $("#divTelefonoContactoEmergencia").html("<strong>Teléfono: </strong>" + response[0].telefono)
-                         $("#divParentescoContactoEmergencia").html("<strong>Parentesco: </strong>" + response[0].parentesco)
-                     }
-                 }
-             })
-         }
-         */
-        /*
-         function consultarTablaFamiliaresGobierno(idEmpleado) {
-             $.ajax({
-                 url: "/Empleado/ConsultarFamiliaresGobierno",
-                 data: { idEmpleado: idEmpleado },
-                 success: function (response) {
-                     let append = ""
-
-                     $.each(response, function (index, value) {
-                         append += '<tr>'
-                         append += ' <td>' + value.numeroEmpleado + '</td>'
-                         append += ' <td>' + value.nombre + '</td>'
-                         append += ' <td>' + value.parentesco[0].parentesco + '</td>'
-                         append += ' <td>' + value.dependencia + '</td>'
-                         append += '</tr>'
-                     })
-                     $("#tbodyFamiliarGobierno").html(append)
-                 }
-             })
-         }
-         */
-        /*
-         function consultarTablaPadres(idEmpleado) {
-
-             $.ajax({
-                 url: "/Empleado/ConsultarPadres",
-                 data: { idEmpleado: idEmpleado },
-                 success: function (response) {
-                     let append = ""
-
-                     $.each(response, function (index, value) {
-                         append += '<tr>'
-                         append += '	<td>' + value.nombre + '</td>'
-                         append += '	<td>' + value.domicilio + '</td>'
-                         append += '	<td>' + value.ocupacion + '</td>'
-                         if (value.vivo == true) {
-                             append += '	<td>Vivo</td>'
-                         } else if (value.vivo == false) {
-                             append += '	<td>Finado</td>'
-                         }
-                         append += '</tr>'
-                     })
-                     $("#tbodyPadres").html(append)
-                 }
-             })
-         }
-         */
-        /*
-         function consultarConyugue(idEmpleado) {
-             $.ajax({
-                 url: "/Empleado/ConsultarConyugues",
-                 data: { idEmpleado: idEmpleado },
-                 type: "POST",
-                 success: function (response) {
-                     if (response.length > 0) {
-                         if (idEstadoCivil == 1) {
-                             $("#divNombreConyugue").html("<strong>Conyugue: </strong>" + response[0].nombre)
-                             $("#divTelefonoConyugue").html("<strong>Teléfono: </strong>" + response[0].telefono)
-
-                             if (response[0].fecha_Matrimonio.length > 0) {
-                                 let fechaMatrimonio = response[0].fecha_Matrimonio.split('T')
-                                 let fechaMatrimonioProcesada = fechaMatrimonio[0].split('-')[2] + "/" + fechaMatrimonio[0].split('-')[1] + "/" + fechaMatrimonio[0].split('-')[0]
-
-                                 if (fechaMatrimonioProcesada == "01/01/1900") {
-                                     $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>")
-                                 } else {
-                                     $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>" + fechaMatrimonio[0].split('-')[2] + "/" + fechaMatrimonio[0].split('-')[1] + "/" + fechaMatrimonio[0].split('-')[0])
-                                 }
-
-                             }
-                         }
-                     }
-                 }
-             })
-         }
-         */
         /*
          function limpiarCamposModal() {
              //Datos generales
