@@ -68,6 +68,62 @@ namespace InventarioImpresoras.DAL
             }
             return listaImpresoras;
         }
+        public List<Impresoras> getImpresora(int idImpresora)
+        {
+            List<Impresoras> listaImpresoras = new List<Impresoras>();
+            try
+            {
+                SqlCommand sqlcmd = new SqlCommand("spObtenerImpresora", objConexion.conexion);
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@idImpresora", idImpresora);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlcmd);
+                DataTable dataTable = new DataTable();
+                objConexion.conexion.Open();
+                dataAdapter.Fill(dataTable);
+                objConexion.conexion.Close();
+
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    listaImpresoras.Add(new Impresoras
+                    {
+                        IdImpresora = (int)dr["idImpresora"],
+                        Nombre = (dr["Impresora"].ToString() == "" ? "" : (string)dr["Impresora"]),
+                        NumeroSerie = (dr["numeroSerie"].ToString() == "" ? "" : (string)dr["numeroSerie"]),
+                        Activo = (bool)dr["activo"],
+                        Marcas = new List<Marcas>
+                        {
+                            new Marcas()
+                            {
+                                IdMarca = (int)dr["idMarca"],
+                                Nombre = (dr["Marca"].ToString() == "" ? "" : (string)dr["Marca"]),
+                            }
+                        },
+                        Modelos = new List<Modelos>
+                        {
+                            new Modelos()
+                            {
+                                IdModelo = (int)dr["idModelo"],
+                                Nombre = (dr["Modelo"].ToString() == "" ? "" : (string)dr["Modelo"]),
+                            }
+                        },
+                        Areas = new List<Areas>
+                        {
+                            new Areas()
+                            {
+                                IdArea = (int)dr["idArea"],
+                                Nombre = (dr["Area"].ToString() == "" ? "" : (string)dr["Area"]),
+                            }
+                        },
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return listaImpresoras;
+        }
         public decimal registrar(string numeroSerie, string nombre, int idMarca, int idModelo, int idArea)
         {
             decimal resultado = 0;
@@ -89,6 +145,37 @@ namespace InventarioImpresoras.DAL
                 foreach (DataRow dr in dt.Rows)
                 {
                     resultado = (decimal)(dr["idImpresora"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
+        public int editar(int idImpresora, string numeroSerie, string nombre, int idMarca, int idModelo, int idArea)
+        {
+            int resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spEditarImpresora", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@idImpresora", idImpresora);
+                sqlCmd.Parameters.AddWithValue("@numeroSerie", numeroSerie);
+                sqlCmd.Parameters.AddWithValue("@nombre", nombre);
+                sqlCmd.Parameters.AddWithValue("@idMarca", idMarca);
+                sqlCmd.Parameters.AddWithValue("@idModelo", idModelo);
+                sqlCmd.Parameters.AddWithValue("@idArea", idArea);
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
+
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (int)(dr["resultado"]);
                 }
                 objConexion.conexion.Close();
             }

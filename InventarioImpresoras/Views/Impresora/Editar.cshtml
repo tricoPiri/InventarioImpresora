@@ -1,0 +1,215 @@
+﻿@section CSS {
+    <link href="~/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css" />
+    <style>
+        .dropdown.bootstrap-select.form-control.form-control-lg {
+            line-height: 1.8rem !important;
+        }
+    </style>
+}
+@Html.Partial("~/Views/Shared/_HeaderMobile.cshtml")
+<div class="d-flex flex-column flex-root">
+    <div class="d-flex flex-row flex-column-fluid page">
+        @Html.Partial("~/Views/Shared/_Menu.cshtml")
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+            @Html.Partial("~/Views/Shared/_Header.cshtml")
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+                        @{
+                            List<InventarioImpresoras.Models.Marcas> listaMarcas = ViewBag.Marcas as List<InventarioImpresoras.Models.Marcas>;
+                            List<InventarioImpresoras.Models.Modelos> listaModelos = ViewBag.Modelos as List<InventarioImpresoras.Models.Modelos>;
+                            List<InventarioImpresoras.Models.Areas> listaAreas = ViewBag.Areas as List<InventarioImpresoras.Models.Areas>;
+                            List<InventarioImpresoras.Models.Impresoras> listaImpresora = ViewBag.Impresora as List<InventarioImpresoras.Models.Impresoras>;
+                        }
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card card-custom example example-compact">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Editar impresora</h3>
+                                    </div>
+                                    <form id="kt_form_1" method="POST" class="form">
+                                        <div class="card-body">
+                                            <div class="alert alert-custom alert-light-danger d-none" role="alert" id="kt_form_1_msg">
+                                                <div class="alert-icon">
+                                                    <i class="flaticon2-information"></i>
+                                                </div>
+                                                <div class="alert-text font-weight-bold"></div>
+                                                <div class="alert-close">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span>
+                                                            <i class="ki ki-close"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Número de serie:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtNumeroSerie" name="NumeroSerie" type="text" class="form-control" placeholder="Ingresar número de serie" value="@listaImpresora[0].NumeroSerie" />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Nombre:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtNombre" name="Nombre" type="text" class="form-control" placeholder="Nombre" value="@listaImpresora[0].Nombre" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Marca:</label>
+                                                    <select id="dropMarca" name="Marca" class="form-control selectpicker" data-size="7" data-live-search="true">
+                                                        <option value="">Seleccione...</option>
+                                                        @foreach (InventarioImpresoras.Models.Marcas marca in listaMarcas)
+                                                        {
+                                                            if (marca.Activo == true)
+                                                            {
+                                                                if (listaImpresora[0].Marcas[0].IdMarca  == marca.IdMarca)
+                                                                {
+                                                                    <option value="@marca.IdMarca" selected>@marca.Nombre</option>
+                                                                }else{
+                                                                     <option value="@marca.IdMarca">@marca.Nombre</option>
+                                                                }
+                                                            }
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Modelo:</label>
+                                                    <select id="dropModelo" name="Modelo" class="form-control selectpicker" data-size="7" data-live-search="true">
+                                                        <option value="">Seleccione...</option>
+                                                        @foreach (InventarioImpresoras.Models.Modelos modelo in listaModelos)
+                                                        {
+                                                            if (modelo.Activo == true)
+                                                            {
+                                                                <option value="@modelo.IdModelo">@modelo.Nombre</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Area:</label>
+                                                    <select id="dropArea" name="Area" class="form-control selectpicker" data-size="7" data-live-search="true">
+                                                        <option value="">Seleccione...</option>
+                                                        @foreach (InventarioImpresoras.Models.Areas area in listaAreas)
+                                                        {
+                                                            if (area.Activo == true)
+                                                            {
+                                                                <option value="@area.IdArea">@area.Nombre</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="example-code mt-10">
+                                                <ul class="example-nav nav nav-tabs nav-bold nav-tabs-line nav-tabs-line-2x">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" data-toggle="tab" href="#example_code_html">HTML</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="example_code_html" role="tabpanel">
+                                                        <div class="example-highlight">
+                                                            <pre style="height:400px">
+                                                    </pre>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">URL *</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">
+                                                                    <i class="flaticon2-website"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="text" class="form-control" name="url" placeholder="Enter your url" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col-lg-12" style="text-align:center;">
+                                                    <a href="@Url.Action("Index", "Usuario")" class="btn btn-light-primary font-weight-bold">Cancelar</a>
+                                                    <button id="btnRegistrar" type="submit" class="btn btn-primary font-weight-bold mr-2" name="submitButton">Guardar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("~/Views/Shared/_Footer.cshtml")
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="/js/validaciones/registrarImpresora.js" type="text/javascript"></script>
+    <script src="~/js/pages/crud/forms/widgets/bootstrap-select.js"></script>
+    <script>
+        function registrarImpresora() {
+
+            let numeroSerie = $("#txtNumeroSerie").val()
+            let nombre = $("#txtNombre").val()
+            let idMarca = $("#dropMarca").val()
+            let idModelo = $("#dropModelo").val()
+            let idArea = $("#dropArea").val()
+
+
+            $.ajax({
+                url: "/Impresora/registrar",
+                data: { numeroSerie: numeroSerie, nombre: nombre, idMarca: idMarca, idModelo: idModelo,  idArea: idArea},
+                type: "POST",
+                success: function (response) {
+                    if (response > 0) {
+                        swal.fire({
+                            icon: "success",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok!",
+                            title: "Registro agregado con &eacutexito!",
+                            customClass: {
+                                confirmButton: "btn font-weight-bold btn-light-primary"
+                            }
+                        }).then(function () {
+                            KTUtil.scrollTop();
+                        });
+                        setTimeout(function () {
+                            window.location = "/Impresora/"
+                        },
+                            3000);
+                    }
+                    else {
+                        swal.fire({
+                            icon: "error",
+                            buttonsStyling: false,
+                            confirmButtonText: "Ok!",
+                            title: "Ocurrio un error!",
+                            text: "Contacta a tu administrador",
+                            customClass: {
+                                confirmButton: "btn font-weight-bold btn-light-primary"
+                            }
+                        }).then(function () {
+                            KTUtil.scrollTop();
+                        });
+                    }
+                }
+            })
+        }
+
+        $(document).ready(function () {
+
+            $("#btnRegistrar").click(function (e) {
+                e.preventDefault()
+                validarCampos()
+            })
+        })
+    </script>
+}

@@ -44,6 +44,22 @@ namespace InventarioImpresoras.Controllers
             return View("Agregar");
         }
 
+        public IActionResult ViewEditar(int Impresora)
+        {
+            int idImpresora = Impresora;
+            DAL_Marcas objMarcas = new DAL_Marcas();
+            DAL_Modelos objModelos = new DAL_Modelos();
+            DAL_Areas objAreas = new DAL_Areas();
+
+            ViewData["Marcas"] = objMarcas.getMarcas();
+            ViewData["Modelos"] = objModelos.getModelos();
+            ViewData["Areas"] = objAreas.getAreas();
+            ViewData["Impresora"] = objImpresora.getImpresora(idImpresora);
+
+
+            return View("Editar");
+        }
+
         [Authorize(Roles = "1")]
         public decimal registrar(string numeroSerie, string nombre, int idMarca, int idModelo, int idArea)
         {
@@ -60,8 +76,26 @@ namespace InventarioImpresoras.Controllers
 
             return resultado;
         }
+        [Authorize(Roles = "1")]
+        public decimal editar(int idImpresora, string numeroSerie, string nombre, int idMarca, int idModelo, int idArea)
+        {
+            decimal resultado = 0;
+            try
+            {
+                DAL_Impresoras objImpresoras = new DAL_Impresoras();
+                resultado = objImpresora.editar(idImpresora, numeroSerie, nombre, idMarca, idModelo, idArea);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
     }
 }
+
 
 
 
