@@ -75,7 +75,7 @@ function loguearse() {
                     if (response == "1") {
 
                         //window.location.href = urlLoginProcesado + "/Impresora/Index"
-                        window.location.href = urlLoginProcesado + "/Usuario/Index"
+                        window.location.href = urlLoginProcesado + "/Impresora/Index"
 
                     } else {
                         swal.fire({
