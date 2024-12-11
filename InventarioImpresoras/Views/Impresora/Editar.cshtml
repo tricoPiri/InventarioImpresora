@@ -150,6 +150,7 @@
                                         <div class="card-footer">
                                             <div class="row">
                                                 <div class="col-lg-12" style="text-align:center;">
+                                                    <input id="txtIdImpresora" type="hidden" value="@ViewBag.idImpresora" />
                                                     <a href="@Url.Action("Index", "Usuario")" class="btn btn-light-primary font-weight-bold">Cancelar</a>
                                                     <button id="btnRegistrar" type="submit" class="btn btn-primary font-weight-bold mr-2" name="submitButton">Guardar</button>
                                                 </div>
@@ -167,11 +168,12 @@
     </div>
 </div>
 @section Scripts {
-    <script src="/js/validaciones/registrarImpresora.js" type="text/javascript"></script>
+    <script src="/js/validaciones/editarImpresora.js" type="text/javascript"></script>
     <script src="~/js/pages/crud/forms/widgets/bootstrap-select.js"></script>
     <script>
-        function registrarImpresora() {
+        function editarImpresora() {
 
+            let idImpresora = $("#txtIdImpresora").val()
             let numeroSerie = $("#txtNumeroSerie").val()
             let nombre = $("#txtNombre").val()
             let idMarca = $("#dropMarca").val()
@@ -180,8 +182,8 @@
 
 
             $.ajax({
-                url: "/Impresora/registrar",
-                data: { numeroSerie: numeroSerie, nombre: nombre, idMarca: idMarca, idModelo: idModelo,  idArea: idArea},
+                url: "/Impresora/editar",
+                data: { idImpresora: idImpresora, numeroSerie: numeroSerie, nombre: nombre, idMarca: idMarca, idModelo: idModelo,  idArea: idArea},
                 type: "POST",
                 success: function (response) {
                     if (response > 0) {
@@ -189,7 +191,7 @@
                             icon: "success",
                             buttonsStyling: false,
                             confirmButtonText: "Ok!",
-                            title: "Registro agregado con &eacutexito!",
+                            title: "Registro editado con &eacutexito!",
                             customClass: {
                                 confirmButton: "btn font-weight-bold btn-light-primary"
                             }

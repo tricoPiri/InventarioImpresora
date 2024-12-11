@@ -51,6 +51,7 @@ namespace InventarioImpresoras.Controllers
             DAL_Modelos objModelos = new DAL_Modelos();
             DAL_Areas objAreas = new DAL_Areas();
 
+            ViewData["idImpresora"] = idImpresora;
             ViewData["Marcas"] = objMarcas.getMarcas();
             ViewData["Modelos"] = objModelos.getModelos();
             ViewData["Areas"] = objAreas.getAreas();
@@ -82,7 +83,6 @@ namespace InventarioImpresoras.Controllers
             decimal resultado = 0;
             try
             {
-                DAL_Impresoras objImpresoras = new DAL_Impresoras();
                 resultado = objImpresora.editar(idImpresora, numeroSerie, nombre, idMarca, idModelo, idArea);
             }
             catch (Exception ex)
