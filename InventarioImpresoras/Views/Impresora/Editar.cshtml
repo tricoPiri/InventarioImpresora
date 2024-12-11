@@ -90,7 +90,6 @@
                                                                 {
                                                                     <option value="@modelo.IdModelo">@modelo.Nombre</option>
                                                                 }
-                                                                @* <option value="@modelo.IdModelo">@modelo.Nombre</option> *@
                                                             } 
                                                         }
                                                     </select>
@@ -105,7 +104,14 @@
                                                         {
                                                             if (area.Activo == true)
                                                             {
-                                                                <option value="@area.IdArea">@area.Nombre</option>
+                                                                if (listaImpresora[0].Areas[0].IdArea== area.IdArea)
+                                                                {
+                                                                    <option value="@area.IdArea" selected>@area.Nombre</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="@area.IdArea">@area.Nombre</option>
+                                                                }
                                                             }
                                                         }
                                                     </select>
