@@ -79,10 +79,19 @@
                                                         <option value="">Seleccione...</option>
                                                         @foreach (InventarioImpresoras.Models.Modelos modelo in listaModelos)
                                                         {
+
                                                             if (modelo.Activo == true)
                                                             {
-                                                                <option value="@modelo.IdModelo">@modelo.Nombre</option>
-                                                            }
+                                                                if (listaImpresora[0].Modelos[0].IdModelo == modelo.IdModelo)
+                                                                {
+                                                                    <option value="@modelo.IdModelo" selected>@modelo.Nombre</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="@modelo.IdModelo">@modelo.Nombre</option>
+                                                                }
+                                                                @* <option value="@modelo.IdModelo">@modelo.Nombre</option> *@
+                                                            } 
                                                         }
                                                     </select>
                                                 </div>
