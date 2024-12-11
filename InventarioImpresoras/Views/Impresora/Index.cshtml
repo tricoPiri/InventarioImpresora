@@ -238,8 +238,8 @@
         }
         //INICIO ACTIVAR
         function mostrarMensajeDesactivar(elemento) {
-            /*
-            let idFamiliarGobierno = $(elemento).attr("data-familiarGobiernoId")
+
+            let idImpresora = $(elemento).attr("data-impresoraId")
             //INICIO
             Swal.fire({
                 title: "¿Estas seguro en eliminarlo?",
@@ -255,11 +255,11 @@
 
                     $.ajax({
                         url: "/Impresora/Desactivar",
-                        data: { familiarGobierno_id: idFamiliarGobierno },
+                        data: { idImpresora: idImpresora },
                         type: "POST",
                         success: function (response) {
                             if (response > 0) {
-                                consultarTablaFamiliaresGobierno()
+                                llenarTablaImpresoras()
                                 swal.fire({
                                     icon: "success",
                                     buttonsStyling: false,
@@ -289,8 +289,7 @@
 
                 }
             });
-            //FINAL
-            */
+            //
         }
         //FINAL DESACTIVAR
         /*

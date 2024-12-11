@@ -185,5 +185,58 @@ namespace InventarioImpresoras.DAL
             }
             return resultado;
         }
+        public int desactivar(int idImpresora)
+        {
+            int resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spDesactivarImpresora", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@idImpresora", idImpresora);
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
+
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (int)(dr["resultado"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
+
+        public int activar(int idImpresora)
+        {
+            int resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spActivarImpresora", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@idImpresora", idImpresora);
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
+
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (int)(dr["resultado"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
     }
 }

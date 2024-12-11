@@ -42672,8 +42672,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>kc100bgk85</Fingerprint>
-      <Integrity>LO3wTLJNUUyRwDFvXDKhN20PAdbjo+lGlfG84lNFbnE=</Integrity>
+      <Fingerprint>9nhtbr2c6h</Fingerprint>
+      <Integrity>a6q+PRQEANa93/SuJTLEoJNca5evpHC4hcg3kG2bAgQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\publico\js\pages\custom\login\login-general.js'))</OriginalItemSpec>

@@ -1,4 +1,6 @@
-﻿using System.Linq.Expressions;
+﻿using System.Data.SqlClient;
+using System.Data;
+using System.Linq.Expressions;
 using InventarioImpresoras.DAL;
 using InventarioImpresoras.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -84,6 +86,39 @@ namespace InventarioImpresoras.Controllers
             try
             {
                 resultado = objImpresora.editar(idImpresora, numeroSerie, nombre, idMarca, idModelo, idArea);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
+        [Authorize(Roles = "1")]
+        public int Desactivar(int idImpresora)
+        {
+            int resultado = 0;
+            try
+            {
+                resultado = objImpresora.desactivar(idImpresora);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
+
+        [Authorize(Roles = "1")]
+        public int Activar(int idImpresora)
+        {
+            int resultado = 0;
+            try
+            {
+                resultado = objImpresora.activar(idImpresora);
             }
             catch (Exception ex)
             {
