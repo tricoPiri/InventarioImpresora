@@ -18,6 +18,7 @@
                         @{
                             List<InventarioImpresoras.Models.Roles> listaRoles = ViewBag.Roles as List<InventarioImpresoras.Models.Roles>;
                             List<InventarioImpresoras.Models.Meses> listaMeses = ViewBag.Meses as List<InventarioImpresoras.Models.Meses>;
+                            List<InventarioImpresoras.Models.Impresoras> listaImpresoras = ViewBag.Impresoras as List<InventarioImpresoras.Models.Impresoras>;
                         }
                         <div class="row">
                             <div class="col-lg-12">
@@ -46,6 +47,7 @@
                                                     <span class="text-danger">*</span>
                                                     <input id="txtNombres" name="Nombres" type="text" class="form-control" placeholder="Ingresar nombre (s)" /> *@
                                                     <label>Fecha de lectura:</label>
+                                                    <span class="text-danger">*</span>
                                                     <select id="dropFechaLectura" name="FechaLectura" class="form-control selectpicker" data-size="7" data-live-search="true">
                                                         <option value="">Seleccione...</option>
                                                         @foreach (InventarioImpresoras.Models.Meses mes in listaMeses)
@@ -55,39 +57,39 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <label>Apellido paterno:</label>
+                                                    <label>Impresora:</label>
                                                     <span class="text-danger">*</span>
-                                                    <input id="txtApellidoPaterno" name="ApellidoPaterno" type="text" class="form-control" placeholder="Ingresar apellido paterno" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-lg-6">
-                                                    <label>Apellido materno:</label>
-                                                    <span class="text-danger">*</span>
-                                                    <input id="txtApellidoMaterno" name="ApellidoMaterno" type="text" class="form-control" placeholder="Ingresar apellido materno" />
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <label>Usuario:</label>
-                                                    <span class="text-danger">*</span>
-                                                    <input id="txtUsuario" name="Usuario" type="text" class="form-control" placeholder="Ingresar usuario" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-lg-6">
-                                                    <label>Contraseña:</label>
-                                                    <span class="text-danger">*</span>
-                                                    <input id="txtPassword" name="Password" type="password" class="form-control" placeholder="Ingresar contraseña" />
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <label>Rol:</label>
-                                                    <span class="text-danger">*</span>
-                                                    <select id="dropRol" name="Rol" class="form-control" data-size="7" data-live-search="true">
+                                                    <select id="dropImpresora" name="Impresora" class="form-control selectpicker" data-size="7" data-live-search="true">
                                                         <option value="">Seleccione...</option>
-                                                        @foreach (InventarioImpresoras.Models.Roles rol in listaRoles)
+                                                        @foreach (InventarioImpresoras.Models.Impresoras impresora in listaImpresoras)
                                                         {
-                                                            <option value="@rol.IdRol">@rol.Rol</option>
+                                                            <option value="@impresora.IdImpresora">@impresora.Nombre</option>
                                                         }
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Lectura anterior:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtLecturaAnterior" name="LecturaAnterior" type="text" class="form-control" placeholder="Ingresar lectura anterior" />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Lectura actual:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtLecturaActual" name="LecturaActual" type="text" class="form-control" placeholder="Ingresar lectura actual" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Número de copias procesadas:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtNumeroCopiasProcesadas" name="NumeroCopiasProcesadas" type="text" class="form-control" placeholder="Ingresar número de copias procesadas" />
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label>Observaciones:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <textarea class="form-control"></textarea>
                                                 </div>
                                             </div>
 

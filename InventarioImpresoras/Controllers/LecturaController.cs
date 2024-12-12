@@ -12,6 +12,7 @@ namespace InventarioImpresoras.Controllers
     public class LecturaController : Controller
     {
         DAL_Lecturas objLecturas = new DAL_Lecturas();
+        DAL_Impresoras objImpresoras = new DAL_Impresoras();
         [Authorize(Roles = "1")]
         public ActionResult Index()
         {
@@ -39,6 +40,7 @@ namespace InventarioImpresoras.Controllers
             DAL_Roles objRoles = new DAL_Roles();
             ViewData["Roles"] = objRoles.getRoles();
             ViewData["Meses"] = objLecturas.getMeses();
+            ViewData["Impresoras"] = objImpresoras.getImpresoras();
 
             return View("Agregar");
         }
