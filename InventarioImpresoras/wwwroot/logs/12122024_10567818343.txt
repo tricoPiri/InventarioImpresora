@@ -1,0 +1,10 @@
+
+
+[Fecha:] jueves, 12 diciembre 2024 10: 56:07
+  [Mensaje Error:] Column 'observaciones' does not belong to table .
+ [InnerException:] 
+ [StackTrace:]    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at InventarioImpresoras.DAL.DAL_Lecturas.getLecturas() in C:\inetpub\wwwroot\InventarioImpresoras\InventarioImpresoras\DAL\DAL_Lecturas.cs:line 32
+
+
