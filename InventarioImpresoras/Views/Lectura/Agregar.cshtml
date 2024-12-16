@@ -43,16 +43,24 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-lg-6">
-                                                    @* <label>Nombre (s):</label>
-                                                    <span class="text-danger">*</span>
-                                                    <input id="txtNombres" name="Nombres" type="text" class="form-control" placeholder="Ingresar nombre (s)" /> *@
+                                                    @{
+                                                        int[] meses = Enumerable.Range(1, 12).ToArray();
+                                                        int mesActual = DateTime.Today.Month;
+                                                    }
                                                     <label>Fecha de lectura:</label>
                                                     <span class="text-danger">*</span>
                                                     <select id="dropFechaLectura" name="FechaLectura" class="form-control selectpicker" data-size="7" data-live-search="true">
                                                         <option value="">Seleccione...</option>
                                                         @foreach (InventarioImpresoras.Models.Meses mes in listaMeses)
                                                         {
-                                                            <option value="@mes.IdMes">@mes.Nombre</option>
+                                                            if (mes.IdMes == mesActual)
+                                                            {
+                                                                <option value="@mes.IdMes" selected>@mes.Nombre</option>
+                                                            }else
+                                                            {
+                                                                <option value="@mes.IdMes">@mes.Nombre</option>
+                                                            }
+
                                                         }
                                                     </select>
                                                 </div>
@@ -200,6 +208,10 @@
 
         $(document).ready(function ()
         {
+            const d = new Date();
+            let month = d.getMonth();
+            month = month + 1
+            alert("month: " + month)
             $("#btnRegistrar").click(function (e) {
                 e.preventDefault()
                 validarCampos()
