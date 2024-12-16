@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6GYoY8Fx16UTSqB43gr6jvZ5hq4NT/yRd3G3SOJ9qDI=",
+  "Hash": "YopUtURloUQ3EOKCSm/TXF/meIei8Ke95gyjCc2lz4s=",
   "Source": "InventarioImpresoras",
   "BasePath": "_content/InventarioImpresoras",
   "Mode": "Default",
@@ -9346,6 +9346,25 @@
       "OriginalItemSpec": "wwwroot\\logs\\13112024_12053345500.txt"
     },
     {
+      "Identity": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\logs\\16122024_13182146650.txt",
+      "SourceId": "InventarioImpresoras",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\",
+      "BasePath": "_content/InventarioImpresoras",
+      "RelativePath": "logs/16122024_13182146650.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logs\\16122024_13182146650.txt"
+    },
+    {
       "Identity": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\logs\\16122024_83442811951.txt",
       "SourceId": "InventarioImpresoras",
       "SourceType": "Discovered",
@@ -9458,6 +9477,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\logs\\16122024_85430816847.txt"
+    },
+    {
+      "Identity": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\logs\\16122024_9444593620.txt",
+      "SourceId": "InventarioImpresoras",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\",
+      "BasePath": "_content/InventarioImpresoras",
+      "RelativePath": "logs/16122024_9444593620.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logs\\16122024_9444593620.txt"
     },
     {
       "Identity": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\logs\\20112024_112049866677.txt",

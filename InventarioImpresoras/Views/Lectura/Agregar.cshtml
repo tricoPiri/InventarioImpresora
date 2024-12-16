@@ -19,6 +19,7 @@
                             List<InventarioImpresoras.Models.Roles> listaRoles = ViewBag.Roles as List<InventarioImpresoras.Models.Roles>;
                             List<InventarioImpresoras.Models.Meses> listaMeses = ViewBag.Meses as List<InventarioImpresoras.Models.Meses>;
                             List<InventarioImpresoras.Models.Impresoras> listaImpresoras = ViewBag.Impresoras as List<InventarioImpresoras.Models.Impresoras>;
+                            List<InventarioImpresoras.Models.Areas> listaAreas = ViewBag.Areas as List<InventarioImpresoras.Models.Areas>;
                         }
                         <div class="row">
                             <div class="col-lg-12">
@@ -64,6 +65,19 @@
                                                         }
                                                     </select>
                                                 </div>
+                                                <div class="col-lg-6">
+                                                    <label>Area:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <select id="dropArea" name="Area" class="form-control selectpicker" data-size="7" data-live-search="true">
+                                                        <option value="">Seleccione...</option>
+                                                        @foreach (InventarioImpresoras.Models.Areas area in listaAreas)
+                                                        {
+                                                            <option value="@area.IdArea">@area.Nombre</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <div class="col-lg-6">
                                                     <label>Impresora:</label>
                                                     <span class="text-danger">*</span>
