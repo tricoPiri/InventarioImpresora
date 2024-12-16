@@ -244,7 +244,7 @@
                         let append = ""
                         append = "<option value=''>Seleccione..</option>"
                         $(response).each(function (index, value) {
-                            append += "<option value=" + value.idImpresora + ">" + value.nombre + "</option>"
+                            append += "<option dataModelo='" + value.modelos[0].nombre + "' dataMarca='" + value.marcas[0].nombre + "' value=" + value.idImpresora + ">" + value.nombre + "</option>"
                         })
 
                         $("#dropImpresora").html(append)
