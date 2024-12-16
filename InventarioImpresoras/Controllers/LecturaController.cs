@@ -41,10 +41,25 @@ namespace InventarioImpresoras.Controllers
             DAL_Roles objRoles = new DAL_Roles();
             ViewData["Roles"] = objRoles.getRoles();
             ViewData["Meses"] = objLecturas.getMeses();
-            ViewData["Impresoras"] = objImpresoras.getImpresoras();
+            //ViewData["Impresoras"] = objImpresoras.getImpresoras();
             ViewData["Areas"] = objArea.getAreas();
 
             return View("Agregar");
+        }
+
+        [Authorize(Roles = "1")]
+        public JsonResult ConsultarImpresorasPorArea(int idArea)
+        {
+            List<Impresoras> listaImpresoras = new List<Impresoras>();
+            try
+            {
+                listaImpresoras = objImpresoras.getImpresorasPorArea(idArea);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return Json(listaImpresoras);
         }
 
     }

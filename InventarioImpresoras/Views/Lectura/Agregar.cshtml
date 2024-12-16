@@ -83,10 +83,10 @@
                                                     <span class="text-danger">*</span>
                                                     <select id="dropImpresora" name="Impresora" class="form-control selectpicker" data-size="7" data-live-search="true">
                                                         <option value="">Seleccione...</option>
-                                                        @foreach (InventarioImpresoras.Models.Impresoras impresora in listaImpresoras)
+                                                        @* @foreach (InventarioImpresoras.Models.Impresoras impresora in listaImpresoras)
                                                         {
                                                             <option value="@impresora.IdImpresora">@impresora.Nombre</option>
-                                                        }
+                                                        } *@
                                                     </select>
                                                 </div>
                                             </div>
@@ -229,6 +229,28 @@
             $("#btnRegistrar").click(function (e) {
                 e.preventDefault()
                 validarCampos()
+            })
+
+            $("#dropArea").change(function () {
+
+                let idArea = $("#dropArea").val()
+                $.ajax({
+                    url: "/Lectura/ConsultarImpresorasPorArea",
+                    data: { idArea: idArea  },
+                    type: "POST",
+                    success: function (response) {
+                        console.log("response: \n")
+                        console.log(response)
+                        let append = ""
+                        append = "<option value=''>Seleccione..</option>"
+                        $(response).each(function (index, value) {
+                            append += "<option value=" + value.idImpresora + ">" + value.nombre + "</option>"
+                        })
+
+                        $("#dropImpresora").html(append)
+                        $("#dropImpresora").selectpicker('refresh')
+                    }
+                })
             })
         })
     </script>

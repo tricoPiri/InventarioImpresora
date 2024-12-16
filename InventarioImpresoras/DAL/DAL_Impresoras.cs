@@ -68,6 +68,62 @@ namespace InventarioImpresoras.DAL
             }
             return listaImpresoras;
         }
+        public List<Impresoras> getImpresorasPorArea(int idArea)
+        {
+            List<Impresoras> listaImpresoras = new List<Impresoras>();
+            try
+            {
+                SqlCommand sqlcmd = new SqlCommand("spObtenerImpresorasPorArea", objConexion.conexion);
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@idArea", idArea);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlcmd);
+                DataTable dataTable = new DataTable();
+                objConexion.conexion.Open();
+                dataAdapter.Fill(dataTable);
+                objConexion.conexion.Close();
+
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    listaImpresoras.Add(new Impresoras
+                    {
+                        IdImpresora = (int)dr["idImpresora"],
+                        Nombre = (dr["Impresora"].ToString() == "" ? "" : (string)dr["Impresora"]),
+                        NumeroSerie = (dr["numeroSerie"].ToString() == "" ? "" : (string)dr["numeroSerie"]),
+                        Activo = (bool)dr["activo"],
+                        Marcas = new List<Marcas>
+                        {
+                            new Marcas()
+                            {
+                                IdMarca = (int)dr["idMarca"],
+                                Nombre = (dr["Marca"].ToString() == "" ? "" : (string)dr["Marca"]),
+                            }
+                        },
+                        Modelos = new List<Modelos>
+                        {
+                            new Modelos()
+                            {
+                                IdModelo = (int)dr["idModelo"],
+                                Nombre = (dr["Modelo"].ToString() == "" ? "" : (string)dr["Modelo"]),
+                            }
+                        },
+                        Areas = new List<Areas>
+                        {
+                            new Areas()
+                            {
+                                IdArea = (int)dr["idArea"],
+                                Nombre = (dr["Area"].ToString() == "" ? "" : (string)dr["Area"]),
+                            }
+                        },
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return listaImpresoras;
+        }
         public List<Impresoras> getImpresora(int idImpresora)
         {
             List<Impresoras> listaImpresoras = new List<Impresoras>();
