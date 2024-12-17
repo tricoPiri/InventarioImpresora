@@ -62,6 +62,21 @@ namespace InventarioImpresoras.Controllers
             return Json(listaImpresoras);
         }
 
+        [Authorize(Roles = "1")]
+        public JsonResult ConsultarLecturaAnterior(int idImpresora, int idMes, int año)
+        {
+            List<Lecturas> listaLecturas = new List<Lecturas>();
+            try
+            {
+                listaLecturas = objLecturas.getLecturaAnterior(idImpresora, idMes, año);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return Json(listaLecturas);
+        }
+
     }
 }
 

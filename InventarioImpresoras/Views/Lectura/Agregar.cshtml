@@ -89,26 +89,38 @@
                                                         } *@
                                                     </select>
                                                 </div>
+                                                <div class="col-lg-6">
+                                                    <label>Marca:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtMarca" name="Marca" type="text" class="form-control" placeholder="Ingresar marca" readonly/>
+                                                </div>
                                             </div>
                                             <div class="form-group row">
+                                                <div class="col-lg-6">
+                                                    <label>Modelo:</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input id="txtModelo" name="Modelo" type="text" class="form-control" placeholder="Ingresar modelo" readonly />
+                                                </div>
                                                 <div class="col-lg-6">
                                                     <label>Lectura anterior:</label>
                                                     <span class="text-danger">*</span>
                                                     <input id="txtLecturaAnterior" name="LecturaAnterior" type="text" class="form-control" placeholder="Ingresar lectura anterior" />
                                                 </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <div class="col-lg-6">
                                                     <label>Lectura actual:</label>
                                                     <span class="text-danger">*</span>
                                                     <input id="txtLecturaActual" name="LecturaActual" type="text" class="form-control" placeholder="Ingresar lectura actual" />
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
                                                 <div class="col-lg-6">
                                                     <label>Número de copias procesadas:</label>
                                                     <span class="text-danger">*</span>
                                                     <input id="txtNumeroCopiasProcesadas" name="NumeroCopiasProcesadas" type="text" class="form-control" placeholder="Ingresar número de copias procesadas" />
                                                 </div>
-                                                <div class="col-lg-6">
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-12">
                                                     <label>Observaciones:</label>
                                                     <span class="text-danger">*</span>
                                                     <textarea class="form-control"></textarea>
@@ -219,13 +231,8 @@
                 }
             })
         }
-
-        $(document).ready(function ()
-        {
-            const d = new Date();
-            let month = d.getMonth();
-            month = month + 1
-            alert("month: " + month)
+        //var respuestaLectura = null
+        $(document).ready(function () {
             $("#btnRegistrar").click(function (e) {
                 e.preventDefault()
                 validarCampos()
@@ -236,7 +243,7 @@
                 let idArea = $("#dropArea").val()
                 $.ajax({
                     url: "/Lectura/ConsultarImpresorasPorArea",
-                    data: { idArea: idArea  },
+                    data: { idArea: idArea },
                     type: "POST",
                     success: function (response) {
                         console.log("response: \n")
@@ -261,10 +268,43 @@
                 console.log($(this).data('marca'))
                 */
                 //console.log($(this).data('dataModelo'))
+                /*
                 console.log("Modelo: \n")
                 console.log($(this).find(':selected').attr('data-modelo'))
                 console.log("Marca: \n")
                 console.log($(this).find(':selected').attr('data-marca'))
+                */
+                let modelo = $(this).find(':selected').attr('data-modelo')
+                let marca = $(this).find(':selected').attr('data-marca')
+                $("#txtMarca").val(marca)
+                $("#txtModelo").val(modelo)
+
+                const d = new Date();
+                //month = month + 1
+                //let currentYear = new Date().getFullYear();
+
+                // console.log("mes: " + month + "\n")
+                // console.log("currentYear: \n")
+                // console.log(currentYear)
+
+                let idImpresora = $("#dropImpresora").val()
+                let idMes = d.getMonth()
+                let año = new Date().getFullYear()
+
+                $.ajax({
+                    url: "/Lectura/ConsultarLecturaAnterior",
+                    data: { idImpresora: idImpresora, idMes: idMes, año: año },
+                    type: "POST",
+                    success: function (response) {
+                        console.log("response: \n")
+                        console.log(response)
+                        //respuestaLectura = response
+                        if (response.length > 0)
+                        {
+                            $("#txtLecturaAnterior").val(response[0].lecturaActual)
+                        }
+                    }
+                })
             })
         })
     </script>

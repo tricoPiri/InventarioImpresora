@@ -99,5 +99,44 @@ namespace InventarioImpresoras.DAL
             }
             return listaLecturas;
         }
+        public List<Lecturas> getLecturaAnterior(int idImpresora, int idMes, int año)
+        {
+            List<Lecturas> listaLecturas = new List<Lecturas>();
+            try
+            {
+                SqlCommand sqlcmd = new SqlCommand("spObtenerLecturaAnteriorImpresora", objConexion.conexion);
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@idImpresora", idImpresora);
+                sqlcmd.Parameters.AddWithValue("@idMes", idMes);
+                sqlcmd.Parameters.AddWithValue("@año", año);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlcmd);
+                DataTable dataTable = new DataTable();
+                objConexion.conexion.Open();
+                dataAdapter.Fill(dataTable);
+                objConexion.conexion.Close();
+
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    listaLecturas.Add(new Lecturas
+                    {
+                        IdLectura = (int)dr["idLectura"],
+                        LecturaActual = (int)dr["lecturaActual"],
+                        Impresoras = new List<Impresoras>
+                        {
+                            new Impresoras()
+                            {
+                                IdImpresora = (int)dr["idImpresora"]
+                            }
+                        },
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return listaLecturas;
+        }
     }
 }
