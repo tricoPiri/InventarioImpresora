@@ -1585,6 +1585,14 @@
       "PackagePath": "staticwebassets\\js\\validaciones\\registrarImpresora.min.js"
     },
     {
+      "Id": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarLectura.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\registrarLectura.js"
+    },
+    {
+      "Id": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarLectura.min.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\registrarLectura.min.js"
+    },
+    {
       "Id": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\js\\validaciones\\registrarUsuario.js",
       "PackagePath": "staticwebassets\\js\\validaciones\\registrarUsuario.js"
     },
