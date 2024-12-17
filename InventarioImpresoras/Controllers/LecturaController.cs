@@ -76,6 +76,13 @@ namespace InventarioImpresoras.Controllers
             }
             return Json(listaLecturas);
         }
+        [Authorize(Roles = "1")]
+        public int CalcularCopiasProcesadas(int lecturaAnterior, int lecturaActual)
+        {
+
+            int resultado = lecturaActual - lecturaAnterior;
+            return resultado;
+        }
 
     }
 }

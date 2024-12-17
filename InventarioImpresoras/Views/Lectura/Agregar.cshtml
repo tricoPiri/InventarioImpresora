@@ -104,7 +104,7 @@
                                                 <div class="col-lg-6">
                                                     <label>Lectura anterior:</label>
                                                     <span class="text-danger">*</span>
-                                                    <input id="txtLecturaAnterior" name="LecturaAnterior" type="text" class="form-control" placeholder="Ingresar lectura anterior" />
+                                                    <input id="txtLecturaAnterior" name="LecturaAnterior" type="text" class="form-control" placeholder="Ingresar lectura anterior" readonly/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -122,7 +122,7 @@
                                                     <div class="form-group">
                                                         <label>Número de copias procesadas</label>
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" placeholder="Número de copias procesadas" />
+                                                            <input id="txtCopiasProcesadas" type="text" class="form-control" placeholder="Número de copias procesadas" />
                                                             <div class="input-group-append">
                                                                 <button id="btnCalcularCopiasProcesadas" class="btn btn-secondary" type="button">Calcular</button>
                                                             </div>
@@ -329,6 +329,7 @@
                     success: function (response) {
                         console.log("response: \n")
                         console.log(response)
+                        $("#txtCopiasProcesadas").val(response)
                     }
                 })
             })
