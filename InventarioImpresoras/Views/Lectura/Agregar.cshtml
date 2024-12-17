@@ -113,10 +113,21 @@
                                                     <span class="text-danger">*</span>
                                                     <input id="txtLecturaActual" name="LecturaActual" type="text" class="form-control" placeholder="Ingresar lectura actual" />
                                                 </div>
-                                                <div class="col-lg-6">
+                                                @* <div class="col-lg-6">
                                                     <label>Número de copias procesadas:</label>
                                                     <span class="text-danger">*</span>
                                                     <input id="txtNumeroCopiasProcesadas" name="NumeroCopiasProcesadas" type="text" class="form-control" placeholder="Ingresar número de copias procesadas" />
+                                                </div> *@
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>Número de copias procesadas</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Número de copias procesadas" />
+                                                            <div class="input-group-append">
+                                                                <button id="btnCalcularCopiasProcesadas" class="btn btn-secondary" type="button">Calcular</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -303,6 +314,21 @@
                         {
                             $("#txtLecturaAnterior").val(response[0].lecturaActual)
                         }
+                    }
+                })
+            })
+
+            $("#btnCalcularCopiasProcesadas").click(function(){
+                let lecturaAnterior = $("#txtLecturaAnterior").val()
+                let lecturaActual = $("#txtLecturaActual").val()
+
+                $.ajax({
+                    url: "/Lectura/CalcularCopiasProcesadas",
+                    data: { lecturaAnterior: lecturaAnterior, lecturaActual: lecturaActual },
+                    type: "POST",
+                    success: function (response) {
+                        console.log("response: \n")
+                        console.log(response)
                     }
                 })
             })
