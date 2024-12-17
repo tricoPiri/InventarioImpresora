@@ -97,27 +97,15 @@ var KTFormControls = function () {
 	};
 }();
 
-function validarCampos()
+function validarCampos(insertar)
 {	
 	validation.validate().then(function (status) {
-		if (status == 'Valid')
+		if (insertar == true)
 		{
-			registrarLectura()
-			
-		} else {
-			/*
-			Swal.fire({
-				title: "Debes de capturar los campos obligatorios!",
-				icon: "warning",
-				buttonsStyling: false,
-				confirmButtonText: "Ok!",
-				customClass: {
-					confirmButton: "btn font-weight-bold btn-light"
-				}
-			}).then(function () {
-				KTUtil.scrollTop();
-			});
-			*/
+			if (status == 'Valid') {
+				registrarLectura()
+
+			} 
 		}
 	})
 }

@@ -92,7 +92,7 @@
                                                 <div class="col-lg-6">
                                                     <label>Marca:</label>
                                                     <span class="text-danger">*</span>
-                                                    <input id="txtMarca" name="Marca" type="text" class="form-control" placeholder="Ingresar marca" readonly onchange="validarCampos()" />
+                                                    <input id="txtMarca" name="Marca" type="text" class="form-control" placeholder="Ingresar marca" readonly />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -122,7 +122,7 @@
                                                     <div class="form-group">
                                                         <label>Número de copias procesadas</label>
                                                         <div class="input-group">
-                                                            <input id="txtCopiasProcesadas" name="CopiasProcesadas" type="text" class="form-control" placeholder="Número de copias procesadas" readonly/>
+                                                            <input id="txtCopiasProcesadas" name="CopiasProcesadas" type="text" class="form-control" placeholder="Número de copias procesadas" readonly />
                                                             <div class="input-group-append">
                                                                 <button id="btnCalcularCopiasProcesadas" class="btn btn-secondary" type="button">Calcular</button>
                                                             </div>
@@ -133,7 +133,7 @@
                                             <div class="form-group row">
                                                 <div class="col-lg-12">
                                                     <label>Observaciones:</label>
-                                                    <textarea class="form-control"></textarea>
+                                                    <textarea id="txtObservaciones" class="form-control"></textarea>
                                                 </div>
                                             </div>
 
@@ -188,23 +188,22 @@
 @section Scripts {
     <script src="/js/validaciones/registrarLectura.js" type="text/javascript"></script>
     <script>
-        function registrarUsuario()
-        {
-            let nombre = $("#txtNombres").val()
-            let apellidoPaterno = $("#txtApellidoPaterno").val()
-            let apellidoMaterno = $("#txtApellidoMaterno").val()
-            let usuario = $("#txtUsuario").val()
-            let password = $("#txtPassword").val()
-            let idRol = $("#dropRol").val()
+        function registrarLectura(){
+            let idMes = $("#dropFechaLectura").val()
+            let lecturaAnterior = $("#txtLecturaAnterior").val()
+            let lecturaActual = $("#txtLecturaActual").val()
+            let observaciones = $("#txtObservaciones").val()
+            let copiasProcesadas = $("#txtCopiasProcesadas").val()
+            let idImpresora = $("#dropImpresora").val()
 
             $.ajax({
-                url: "/Usuario/registrar",
-                data: { nombre: nombre, apellidoPaterno: apellidoPaterno, apellidoMaterno: apellidoMaterno, usuario: usuario, password: password, idRol: idRol },
+                url: "/Lectura/registrarLectura",
+                data: { idMes: idMes, lecturaAnterior: lecturaAnterior, lecturaActual: lecturaActual, observaciones: observaciones, copiasProcesadas: copiasProcesadas, idImpresora: idImpresora },
                 type: "POST",
-                success: function (response)
-                {
-                    if (response > 0)
-                    {
+                success: function(response){
+                    console.log("response: \n")
+                    console.log(response)
+                    if (response > 0) {
                         swal.fire({
                             icon: "success",
                             buttonsStyling: false,
@@ -216,15 +215,14 @@
                         }).then(function () {
                             KTUtil.scrollTop();
                         });
-                        /*
+                        
                         setTimeout(function () {
-                            window.location = "/Usuario/"
+                            window.location = "/Lectura/"
                         },
                         3000);
-                        */
+                        
                     }
-                    else
-                    {
+                    else {
                         swal.fire({
                             icon: "error",
                             buttonsStyling: false,
@@ -242,14 +240,27 @@
             })
         }
 
-        function registrarLectura(){
-            alert("se registrara la lectura")
+        function calcularCopiasProcesadas() {
+            let lecturaAnterior = $("#txtLecturaAnterior").val()
+            let lecturaActual = $("#txtLecturaActual").val()
+
+            $.ajax({
+                url: "/Lectura/CalcularCopiasProcesadas",
+                data: { lecturaAnterior: lecturaAnterior, lecturaActual: lecturaActual },
+                type: "POST",
+                success: function (response) {
+                    console.log("response: \n")
+                    console.log(response)
+                    $("#txtCopiasProcesadas").val(response)
+                    validarCampos(false)
+                }
+            })
         }
         //var respuestaLectura = null
         $(document).ready(function () {
             $("#btnRegistrar").click(function (e) {
                 e.preventDefault()
-                validarCampos()
+                validarCampos(true)
             })
 
             $("#dropArea").change(function () {
@@ -317,26 +328,13 @@
                         {
                             $("#txtLecturaAnterior").val(response[0].lecturaActual)
                         }
-                        validarCampos()
+                        validarCampos(false)
                     }
                 })
             })
 
             $("#btnCalcularCopiasProcesadas").click(function(){
-                let lecturaAnterior = $("#txtLecturaAnterior").val()
-                let lecturaActual = $("#txtLecturaActual").val()
-
-                $.ajax({
-                    url: "/Lectura/CalcularCopiasProcesadas",
-                    data: { lecturaAnterior: lecturaAnterior, lecturaActual: lecturaActual },
-                    type: "POST",
-                    success: function (response) {
-                        console.log("response: \n")
-                        console.log(response)
-                        $("#txtCopiasProcesadas").val(response)
-                        validarCampos()
-                    }
-                })
+                calcularCopiasProcesadas()
             })
         })
     </script>

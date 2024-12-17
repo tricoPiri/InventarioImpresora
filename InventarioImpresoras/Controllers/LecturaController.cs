@@ -84,6 +84,23 @@ namespace InventarioImpresoras.Controllers
             return resultado;
         }
 
+        [Authorize(Roles = "1")]
+        public decimal registrarLectura(int idMes, int lecturaAnterior, int lecturaActual, string observaciones, int copiasProcesadas, int idImpresora)
+        {
+            decimal resultado = 0;
+            try
+            {
+                resultado = objLecturas.addLectura(idMes, lecturaAnterior, lecturaActual, observaciones, copiasProcesadas, idImpresora); //objUsuario.registrar(nombre, apellidoPaterno, apellidoMaterno, usuario, password, idRol);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+                return resultado;
+            }
+
+            return resultado;
+        }
+
     }
 }
 

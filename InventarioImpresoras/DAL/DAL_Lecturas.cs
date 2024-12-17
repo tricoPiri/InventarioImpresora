@@ -138,5 +138,37 @@ namespace InventarioImpresoras.DAL
             }
             return listaLecturas;
         }
+
+        public decimal addLectura(int idMes, int lecturaAnterior, int lecturaActual, string observaciones, int copiasProcesadas, int idImpresora)
+        {
+            decimal resultado = 0;
+            try
+            {
+                SqlCommand sqlCmd = new SqlCommand("spInsertarLecturas", objConexion.conexion);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.AddWithValue("@idMes", idMes);
+                sqlCmd.Parameters.AddWithValue("@lecturaAnterior", lecturaAnterior);
+                sqlCmd.Parameters.AddWithValue("@lecturaActual", lecturaActual);
+                sqlCmd.Parameters.AddWithValue("@observaciones", observaciones);
+                sqlCmd.Parameters.AddWithValue("@copiasProcesadas", copiasProcesadas);
+                sqlCmd.Parameters.AddWithValue("@idImpresora", idImpresora);
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlCmd);
+                DataTable dt = new DataTable();
+
+                objConexion.conexion.Open();
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    resultado = (decimal)(dr["idLectura"]);
+                }
+                objConexion.conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return resultado;
+        }
     }
 }
