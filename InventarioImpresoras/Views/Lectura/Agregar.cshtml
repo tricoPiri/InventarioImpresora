@@ -244,13 +244,27 @@
                         let append = ""
                         append = "<option value=''>Seleccione..</option>"
                         $(response).each(function (index, value) {
-                            append += "<option dataModelo='" + value.modelos[0].nombre + "' dataMarca='" + value.marcas[0].nombre + "' value=" + value.idImpresora + ">" + value.nombre + "</option>"
+                            append += "<option data-modelo='" + value.modelos[0].nombre + "' data-marca='" + value.marcas[0].nombre + "' value=" + value.idImpresora + ">" + value.nombre + "</option>"
                         })
 
                         $("#dropImpresora").html(append)
                         $("#dropImpresora").selectpicker('refresh')
                     }
                 })
+            })
+
+            $("#dropImpresora").change(function () {
+                /*
+                console.log("THIS MODELO: \n")
+                console.log($(this).data('modelo'))
+                console.log("THIS MARCA: \n")
+                console.log($(this).data('marca'))
+                */
+                //console.log($(this).data('dataModelo'))
+                console.log("Modelo: \n")
+                console.log($(this).find(':selected').attr('data-modelo'))
+                console.log("Marca: \n")
+                console.log($(this).find(':selected').attr('data-marca'))
             })
         })
     </script>
