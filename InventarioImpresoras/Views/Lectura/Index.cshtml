@@ -63,8 +63,6 @@
                 url: "/Lectura/ConsultarLecturas",
                 type: "POST",
                 success: function (response) {
-                    console.log("response: \n")
-                    console.log(response)
                     
                     $("#tablaLecturas").DataTable({
                         order: [[0, 'desc']],
@@ -90,67 +88,16 @@
                             { "data": "lecturaActual" },
                             { "data": "numeroCopias" },
                             { "data": "fechaLectura" },
-                            //{ "data": "observaciones" }
-                            /*,
-                            { "data": "nombre" },
-                            {
-                                "data": function (data) {
-                                    return data.marcas[0].nombre
-                                }
-                            },
-                            {
-                                "data": function (data) {
-                                    return data.modelos[0].nombre
-                                }
-                            },
-                            {
-                                "data": function (data) {
-                                    return data.areas[0].nombre
-                                }
-                            },
-                            {
-                                "data": function (data) {
-                                    let opciones = ''
-
-                                    if (data.activo == true) {
-                                        opciones += '<span class="label label-lg label-light-success label-inline" style="color: black;">Activo</span>'
-                                    } else {
-                                        opciones += '<span class="label label-lg label-light-danger label-inline" style="color: black;">Inactivo</span>'
-                                    }
-                                    return opciones
-
-                                }
-                            },
-                            */
                             {
                                 "data": function(data) {
                                     let opciones = ''
-                                    console.log("idLectura: \n")
-                                    console.log(data.idLectura)
-                                    //opciones += '<form method="POST" action="/Impresora/ViewEditar?Emp=' + data.empleado_Id + '" style="display:inline;">'
+
                                     opciones += '<form method="POST" action="/Lectura/ViewEditar?lectura=' + data.idLectura + '" style="display:inline;">'
-                                    //opciones += '   <input type="text" value=' + data.empleado_Id + ' style="display:none;"/>'
                                     opciones += '   <button type="submit" style="color:black;" class="btn btn-icon btn-light btn-sm">'
                                     opciones += '       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'
                                     opciones += '           <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>'
                                     opciones += '       </svg>'
                                     opciones += '   </button>'
-
-                                    // if (data.activo == true) {
-                                    // opciones += '   <button data-impresoraId="' + data.idImpresora + '" data-empleadoId="0" data-nombre="0" data-numeroEmp="0" data-parentescoId="0" data-dependencia="0" style="color:black;" class="btn btn-icon btn-light btn-sm" onclick="mostrarMensajeDesactivar(this); return false;">'
-                                    // opciones += '       <svg style="color:red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">'
-                                    // opciones += '           <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"></path>'
-                                    // opciones += '       </svg>'
-                                    // opciones += '   </button>'
-                                    // }else{
-                                    //     opciones += '   <button data-impresoraId="' + data.idImpresora + '" data-empleadoId="0" data-nombre="0" data-numeroEmp="0" data-parentescoId="0" data-dependencia="0" style="color:black;" class="btn btn-icon btn-light btn-sm" onclick="mostrarMensajeActivar(this); return false;">'
-                                    //     opciones += ' <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">'
-                                    //     opciones += '   <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>'
-                                    //     opciones += '   <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>'
-                                    //     opciones += '  </svg>'
-                                    //     opciones += '   </button>'
-                                    // }
-
                                     opciones += '</form>'
 
                                     return opciones
@@ -164,11 +111,10 @@
             })
         }
 
-        //INICIO ACTIVAR
         function mostrarMensajeActivar(elemento) {
 
             let idImpresora = $(elemento).attr("data-impresoraId")
-            //INICIO
+
             Swal.fire({
                 title: "¿Estas seguro en activar?",
                 //text: "You won't be able to revert this!",
@@ -217,12 +163,11 @@
 
                 }
             });
-            //
         }
         function mostrarMensajeDesactivar(elemento) {
 
             let idImpresora = $(elemento).attr("data-impresoraId")
-            //INICIO
+
             Swal.fire({
                 title: "¿Estas seguro en desactivar?",
                 //text: "You won't be able to revert this!",
@@ -271,66 +216,10 @@
 
                 }
             });
-            //
         }
-        //FINAL DESACTIVAR
-        /*
-         function limpiarCamposModal() {
-             //Datos generales
-             $("#divNombreCompleto").html("<strong>Nombre completo: <strong>")
-             $("#divFechaNacimiento").html("<strong>Fecha de nacimiento: <strong>")
-             $("#divRFC").html("<strong>RFC: <strong>")
-             $("#divCURP").html("<strong>CURP: <strong>")
-             $("#divGenero").html("<strong>Genero: <strong>")
-             $("#divTipoSangre").html("<strong>Tipo de sangre: <strong>")
-             $("#divEstadoCivil").html("<strong>Genero: <strong>")
 
-             //Domicilio
-             $("#divCalle").html("<strong>Calle: <strong>")
-             $("#divEntreCalles").html("<strong>Entre calles: <strong>")
-             $("#divNumeroExterior").html("<strong>Número exterior: <strong>")
-             $("#divNumeroInterior").html("<strong>Número interior: <strong>")
-             $("#divColonia").html("<strong>Colonia: <strong>")
-             $("#divCodigoPostal").html("<strong>Codigo postal: <strong>")
-
-             //profesion
-             $("#divProfesion").html("<strong>Profesión: </strong>")
-             $("#divCarreraTrunca").html("<strong>Carrera trunca: </strong>")
-             $("#divPosgrado").html("<strong>Posgrado: </strong>")
-             $("#divPosgradoEnCurso").html("<strong>Posgrado en curso: </strong>")
-
-             //contacto
-             $("#divEmailPersonal").html("<strong>Correo electrónico personal: </strong>")
-             $("#divEmailInstitucional").html("<strong>Correo electrónico institucional: </strong>")
-             $("#divTelefonoCasa").html("<strong>Teléfono de casa: </strong>")
-             $("#divTelefonoMovil").html("<strong>Teléfono de móvil: </strong>")
-
-             //contacto emergencia
-             $("#divNombreContactoEmergencia").html("<strong>Nombre completo: </strong>")
-             $("#divTelefonoContactoEmergencia").html("<strong>Teléfono: </strong>")
-             $("#divParentescoContactoEmergencia").html("<strong>Parentesco: </strong>")
-
-             //conyugue
-             $("#divNombreConyugue").html("<strong>Conyugue: </strong>")
-             $("#divTelefonoConyugue").html("<strong>Teléfono: </strong>")
-             $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>")
-
-         }
-         */
-        /*
-         function modalConsultarInformacionEmpleado(idEmpleado) {
-             limpiarCamposModal()
-             consultarDatosGenerales(idEmpleado)
-             consultarContactoEmergencia(idEmpleado)
-             consultarTablaPadres(idEmpleado)
-             consultarTablaFamiliaresGobierno(idEmpleado)
-             consultarConyugue(idEmpleado)
-             $('#btnModalConsultarEmpleado').trigger('click')
-             return false
-         }
-         */
         $(document).ready(function () {
-            //idRolEmpleadoSesion = $("#txtRolIdEmpleadoSesion").val()
+
             $('#tablaLecturas').DataTable();
 
             llenarTablaLecturas()

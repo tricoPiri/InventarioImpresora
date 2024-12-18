@@ -1,10 +1,4 @@
 ﻿@section CSS {
-    <link href="~/css/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css" />
-    <style>
-        .dropdown.bootstrap-select.form-control.form-control-lg {
-            line-height: 1.8rem !important;
-        }
-    </style>
 }
 @Html.Partial("~/Views/Shared/_HeaderMobile.cshtml")
 <div class="d-flex flex-column flex-root">
@@ -82,10 +76,6 @@
                                                     <span class="text-danger">*</span>
                                                     <select id="dropImpresora" name="Impresora" class="form-control selectpicker" data-size="7" data-live-search="true">
                                                         <option value="">Seleccione...</option>
-                                                        @* @foreach (InventarioImpresoras.Models.Impresoras impresora in listaImpresoras)
-                                                        {
-                                                            <option value="@impresora.IdImpresora">@impresora.Nombre</option>
-                                                        } *@
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -112,11 +102,6 @@
                                                     <span class="text-danger">*</span>
                                                     <input id="txtLecturaActual" name="LecturaActual" type="text" class="form-control" placeholder="Ingresar lectura actual" />
                                                 </div>
-                                                @* <div class="col-lg-6">
-                                                    <label>Número de copias procesadas:</label>
-                                                    <span class="text-danger">*</span>
-                                                    <input id="txtNumeroCopiasProcesadas" name="NumeroCopiasProcesadas" type="text" class="form-control" placeholder="Ingresar número de copias procesadas" />
-                                                </div> *@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Número de copias procesadas</label>
@@ -201,8 +186,7 @@
                 data: { idMes: idMes, lecturaAnterior: lecturaAnterior, lecturaActual: lecturaActual, observaciones: observaciones, copiasProcesadas: copiasProcesadas, idImpresora: idImpresora },
                 type: "POST",
                 success: function(response){
-                    console.log("response: \n")
-                    console.log(response)
+
                     if (response > 0) {
                         swal.fire({
                             icon: "success",
@@ -249,14 +233,13 @@
                 data: { lecturaAnterior: lecturaAnterior, lecturaActual: lecturaActual },
                 type: "POST",
                 success: function (response) {
-                    console.log("response: \n")
-                    console.log(response)
+
                     $("#txtCopiasProcesadas").val(response)
                     validarCampos(false)
                 }
             })
         }
-        //var respuestaLectura = null
+
         $(document).ready(function () {
             $("#btnRegistrar").click(function (e) {
                 e.preventDefault()
@@ -271,8 +254,7 @@
                     data: { idArea: idArea },
                     type: "POST",
                     success: function (response) {
-                        console.log("response: \n")
-                        console.log(response)
+
                         let append = ""
                         append = "<option value=''>Seleccione..</option>"
                         $(response).each(function (index, value) {
@@ -286,31 +268,13 @@
             })
 
             $("#dropImpresora").change(function () {
-                /*
-                console.log("THIS MODELO: \n")
-                console.log($(this).data('modelo'))
-                console.log("THIS MARCA: \n")
-                console.log($(this).data('marca'))
-                */
-                //console.log($(this).data('dataModelo'))
-                /*
-                console.log("Modelo: \n")
-                console.log($(this).find(':selected').attr('data-modelo'))
-                console.log("Marca: \n")
-                console.log($(this).find(':selected').attr('data-marca'))
-                */
+
                 let modelo = $(this).find(':selected').attr('data-modelo')
                 let marca = $(this).find(':selected').attr('data-marca')
                 $("#txtMarca").val(marca)
                 $("#txtModelo").val(modelo)
 
                 const d = new Date();
-                //month = month + 1
-                //let currentYear = new Date().getFullYear();
-
-                // console.log("mes: " + month + "\n")
-                // console.log("currentYear: \n")
-                // console.log(currentYear)
 
                 let idImpresora = $("#dropImpresora").val()
                 let idMes = d.getMonth()
@@ -321,9 +285,7 @@
                     data: { idImpresora: idImpresora, idMes: idMes, año: año },
                     type: "POST",
                     success: function (response) {
-                        console.log("response: \n")
-                        console.log(response)
-                        //respuestaLectura = response
+
                         if (response.length > 0)
                         {
                             $("#txtLecturaAnterior").val(response[0].lecturaActual)
