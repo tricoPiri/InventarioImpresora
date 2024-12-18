@@ -46,95 +46,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--FINAL DESCARTAR-->
-                        <!--
-                        <button id="btnModalConsultarUsuario" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCustomScrollable" style="display:none;">
-                            Abrir modal
-                        </button>
-                        <div class="modal fade" id="exampleModalCustomScrollable" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Consulta de empleado</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <i aria-hidden="true" class="ki ki-close"></i>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div data-scroll="true" data-height="650">
-                                            <h4>Datos generales:</h4>
-                                            <p id="divNombreCompleto"><strong>Nombre completo: </strong></p>
-                                            <p id="divFechaNacimiento"><strong>Fecha de nacimiento: </strong></p>
-                                            <p id="divRFC"><strong>RFC: </strong></p>
-                                            <p id="divCURP"><strong>CURP: </strong></p>
-                                            <p id="divGenero"><strong>Genero: </strong></p>
-                                            <p id="divTipoSangre"><strong>Tipo de sangre: </strong></p>
-                                            <p id="divEstadoCivil"><strong>Estado civil: </strong></p>
-                                            <p id="divTieneHijos">Tiene hijos: </p>
-                                            <div class="separator separator-dashed my-5"></div>
-                                            <h4>Domicilio</h4>
-                                            <p id="divCalle"><strong>Calle: </strong></p>
-                                            <p id="divEntreCalles"><strong>Entre calles: </strong></p>
-                                            <p id="divNumeroExterior"><strong>Número exterior: </strong></p>
-                                            <p id="divNumeroInterior"><strong>Número interior: </strong></p>
-                                            <p id="divColonia"><strong>Colonia: </strong></p>
-                                            <p id="divCodigoPostal"><strong>Codigo postal: </strong></p>
-                                            <div class="separator separator-dashed my-5"></div>
-                                            <h4>Profesión</h4>
-                                            <p id="divProfesion" style="display:none;"><strong>Profesión: </strong></p>
-                                            <p id="divCarreraTrunca" style="display:none;"><strong>Carrera trunca:</strong></p>
-                                            <p id="divPosgrado" style="display:none;"><strong>Posgrado: </strong></p>
-                                            <p id="divPosgradoEnCurso" style="display:none;"><strong>Posgrado en curso: </strong></p>
-                                            <div class="separator separator-dashed my-5"></div>
-                                            <h4>Contacto</h4>
-                                            <p id="divEmailPersonal"><strong>Correo electrónico personal: </strong></p>
-                                            <p id="divEmailInstitucional"><strong>Correo electrónico institucional: </strong></p>
-                                            <p id="divTelefonoCasa"><strong>Telefono casa: </strong></p>
-                                            <p id="divTelefonoMovil"><strong>Telefono movil: </strong></p>
-                                            <div class="separator separator-dashed my-5"></div>
-                                            <h4>Contacto emergencia</h4>
-                                            <p id="divNombreContactoEmergencia"><strong>Nombre completo: </strong></p>
-                                            <p id="divTelefonoContactoEmergencia"><strong>Teléfono: </strong></p>
-                                            <p id="divParentescoContactoEmergencia"><strong>Parentesco:</strong></p>
-                                            <div class="separator separator-dashed my-5"></div>
-                                            <h4>Conyugue</h4>
-                                            <p id="divNombreConyugue"><strong>Conyugue: </strong></p>
-                                            <p id="divTelefonoConyugue"><strong>Teléfono: </strong></p>
-                                            <p id="divFechaMatrimonio"><strong>Fecha de matrimonio: </strong></p>
-                                            <div class="separator separator-dashed my-5"></div>
-                                            <h4>Padres</h4>
-                                            <table class="table table-bordered">
-                                                <tr style="background-color:#7e82994f">
-                                                    <th>Nombre</th>
-                                                    <th>Domicilio</th>
-                                                    <th>Ocupación</th>
-                                                    <th>Vive/Finado</th>
-                                                </tr>
-                                                <tbody id="tbodyPadres">
-                                                </tbody>
-                                            </table>
-                                            <div class="separator separator-dashed my-5"></div>
-                                            <h4>Familiares trabajando en gobierno del estado</h4>
-                                            <table class="table table-bordered">
-                                                <tr style="background-color:#7e82994f">
-                                                    <th>Número de empleado</th>
-                                                    <th>Nombre</th>
-                                                    <th>Parentesco</th>
-                                                    <th>Dependencia</th>
-                                                </tr>
-                                                <tbody id="tbodyFamiliarGobierno">
-                                                </tbody>
-                                            </table>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary font-weight-bold" data-dismiss="modal">Cerrar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        -->
-                        <!--INICIO DESCARTAR-->
                     </div>
                 </div>
             </div>
@@ -152,8 +63,6 @@
                 url: "/Impresora/ConsultarImpresoras",
                 type: "POST",
                 success: function (response) {
-                    console.log("response: \n")
-                    console.log(response)
 
                     $("#tablaImpresoras").DataTable({
                         order: [[0, 'desc']],
@@ -199,11 +108,8 @@
                             {
                                 "data": function(data) {
                                     let opciones = ''
-                                    console.log("idImpresora: \n")
-                                    console.log(data.idImpresora)
-                                    //opciones += '<form method="POST" action="/Impresora/ViewEditar?Emp=' + data.empleado_Id + '" style="display:inline;">'
+
                                     opciones += '<form method="POST" action="/Impresora/ViewEditar?Impresora=' + data.idImpresora + '" style="display:inline;">'
-                                    //opciones += '   <input type="text" value=' + data.empleado_Id + ' style="display:none;"/>'
                                     opciones += '   <button type="submit" style="color:black;" class="btn btn-icon btn-light btn-sm">'
                                     opciones += '       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">'
                                     opciones += '           <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>'
@@ -237,11 +143,10 @@
             })
         }
         
-        //INICIO ACTIVAR
         function mostrarMensajeActivar(elemento) {
 
             let idImpresora = $(elemento).attr("data-impresoraId")
-            //INICIO
+
             Swal.fire({
                 title: "¿Estas seguro en activar?",
                 //text: "You won't be able to revert this!",
@@ -290,12 +195,11 @@
 
                 }
             });
-            //
         }
         function mostrarMensajeDesactivar(elemento) {
 
             let idImpresora = $(elemento).attr("data-impresoraId")
-            //INICIO
+
             Swal.fire({
                 title: "¿Estas seguro en desactivar?",
                 //text: "You won't be able to revert this!",
@@ -344,66 +248,10 @@
 
                 }
             });
-            //
         }
-        //FINAL DESACTIVAR
-        /*
-         function limpiarCamposModal() {
-             //Datos generales
-             $("#divNombreCompleto").html("<strong>Nombre completo: <strong>")
-             $("#divFechaNacimiento").html("<strong>Fecha de nacimiento: <strong>")
-             $("#divRFC").html("<strong>RFC: <strong>")
-             $("#divCURP").html("<strong>CURP: <strong>")
-             $("#divGenero").html("<strong>Genero: <strong>")
-             $("#divTipoSangre").html("<strong>Tipo de sangre: <strong>")
-             $("#divEstadoCivil").html("<strong>Genero: <strong>")
-
-             //Domicilio
-             $("#divCalle").html("<strong>Calle: <strong>")
-             $("#divEntreCalles").html("<strong>Entre calles: <strong>")
-             $("#divNumeroExterior").html("<strong>Número exterior: <strong>")
-             $("#divNumeroInterior").html("<strong>Número interior: <strong>")
-             $("#divColonia").html("<strong>Colonia: <strong>")
-             $("#divCodigoPostal").html("<strong>Codigo postal: <strong>")
-
-             //profesion
-             $("#divProfesion").html("<strong>Profesión: </strong>")
-             $("#divCarreraTrunca").html("<strong>Carrera trunca: </strong>")
-             $("#divPosgrado").html("<strong>Posgrado: </strong>")
-             $("#divPosgradoEnCurso").html("<strong>Posgrado en curso: </strong>")
-
-             //contacto
-             $("#divEmailPersonal").html("<strong>Correo electrónico personal: </strong>")
-             $("#divEmailInstitucional").html("<strong>Correo electrónico institucional: </strong>")
-             $("#divTelefonoCasa").html("<strong>Teléfono de casa: </strong>")
-             $("#divTelefonoMovil").html("<strong>Teléfono de móvil: </strong>")
-
-             //contacto emergencia
-             $("#divNombreContactoEmergencia").html("<strong>Nombre completo: </strong>")
-             $("#divTelefonoContactoEmergencia").html("<strong>Teléfono: </strong>")
-             $("#divParentescoContactoEmergencia").html("<strong>Parentesco: </strong>")
-
-             //conyugue
-             $("#divNombreConyugue").html("<strong>Conyugue: </strong>")
-             $("#divTelefonoConyugue").html("<strong>Teléfono: </strong>")
-             $("#divFechaMatrimonio").html("<strong>Fecha de matrimonio: </strong>")
-
-         }
-         */
-        /*
-         function modalConsultarInformacionEmpleado(idEmpleado) {
-             limpiarCamposModal()
-             consultarDatosGenerales(idEmpleado)
-             consultarContactoEmergencia(idEmpleado)
-             consultarTablaPadres(idEmpleado)
-             consultarTablaFamiliaresGobierno(idEmpleado)
-             consultarConyugue(idEmpleado)
-             $('#btnModalConsultarEmpleado').trigger('click')
-             return false
-         }
-         */
+        
         $(document).ready(function () {
-            //idRolEmpleadoSesion = $("#txtRolIdEmpleadoSesion").val()
+
             $('#tablaImpresoras').DataTable();
 
             llenarTablaImpresoras()
