@@ -61,30 +61,31 @@ namespace InventarioImpresoras.DAL
                     listaLecturas.Add(new Lecturas
                     {
                         IdLectura = (int)dr["idLectura"],
-                        FechaLectura = (DateTime)dr["fechaLectura"],
+                        FechaLectura = (dr["fechaLectura"].ToString() == "" ? "" : (string)dr["fechaLectura"]),
                         LecturaAnterior = (int)dr["lecturaAnterior"],
                         LecturaActual = (int)dr["lecturaActual"],
-                        Observaciones = (dr["observaciones"].ToString() == "" ? "" : (string)dr["observaciones"]),
+                        //Observaciones = (dr["observaciones"].ToString() == "" ? "" : (string)dr["observaciones"]),
                         NumeroCopias = (int)dr["numeroCopias"],
 
                         Impresoras = new List<Impresoras>
                         {
                             new Impresoras()
                             {
-                                NumeroSerie = (dr["numeroSerie"].ToString() == "" ? "" : (string)dr["numeroSerie"]),
-                                Modelos = new List<Modelos>
-                                {
-                                    new Modelos()
-                                    {
-                                        IdModelo = (int)dr["idModelo"],
-                                        Nombre = (dr["Modelo"].ToString() == "" ? "" : (string)dr["Modelo"]),
-                                    }
-                                },
+                                Nombre = (dr["Impresora"].ToString() == "" ? "" : (string)dr["Impresora"]),
+                                //NumeroSerie = (dr["numeroSerie"].ToString() == "" ? "" : (string)dr["numeroSerie"]),
+                                //Modelos = new List<Modelos>
+                                //{
+                                //    new Modelos()
+                                //    {
+                                //        IdModelo = (int)dr["idModelo"],
+                                //        Nombre = (dr["Modelo"].ToString() == "" ? "" : (string)dr["Modelo"]),
+                                //    }
+                                //},
                                 Areas = new List<Areas>
                                 {
                                     new Areas()
                                     {
-                                        IdArea = (int)dr["idArea"],
+                                        //IdArea = (int)dr["idArea"],
                                         Nombre = (dr["Area"].ToString() == "" ? "" : (string)dr["Area"]),
                                     }
                                 },

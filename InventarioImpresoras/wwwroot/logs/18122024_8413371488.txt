@@ -1,0 +1,10 @@
+
+
+[Fecha:] miércoles, 18 diciembre 2024 08: 41:03
+  [Mensaje Error:] Column 'idArea' does not belong to table .
+ [InnerException:] 
+ [StackTrace:]    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at InventarioImpresoras.DAL.DAL_Lecturas.getLecturas()
+
+
