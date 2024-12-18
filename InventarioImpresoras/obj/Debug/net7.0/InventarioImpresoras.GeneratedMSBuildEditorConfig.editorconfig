@@ -38,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyYVxBZ3JlZ2FyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/inetpub/wwwroot/inventario_impresora/InventarioImpresoras/Views/Lectura/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyYVxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/inetpub/wwwroot/inventario_impresora/InventarioImpresoras/Views/Lectura/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVjdHVyYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

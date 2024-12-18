@@ -1569,6 +1569,14 @@
       "PackagePath": "staticwebassets\\js\\validaciones\\editarImpresora.min.js"
     },
     {
+      "Id": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarLectura.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\editarLectura.js"
+    },
+    {
+      "Id": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarLectura.min.js",
+      "PackagePath": "staticwebassets\\js\\validaciones\\editarLectura.min.js"
+    },
+    {
       "Id": "C:\\inetpub\\wwwroot\\inventario_impresora\\InventarioImpresoras\\wwwroot\\js\\validaciones\\editarUsuario.js",
       "PackagePath": "staticwebassets\\js\\validaciones\\editarUsuario.js"
     },

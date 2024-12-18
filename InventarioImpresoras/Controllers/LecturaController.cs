@@ -14,6 +14,7 @@ namespace InventarioImpresoras.Controllers
         DAL_Lecturas objLecturas = new DAL_Lecturas();
         DAL_Impresoras objImpresoras = new DAL_Impresoras();
         DAL_Areas objArea = new DAL_Areas();
+
         [Authorize(Roles = "1")]
         public ActionResult Index()
         {
@@ -34,17 +35,40 @@ namespace InventarioImpresoras.Controllers
             }
             return Json(listaLecturas);
         }
+        [Authorize(Roles = "1")]
+        public JsonResult ConsultarLectura(int idLectura)
+        {
+            List<Lecturas> listaLecturas = new List<Lecturas>();
+            try
+            {
+                listaLecturas = objLecturas.getLectura(idLectura);
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return Json(listaLecturas);
+        }
 
         [Authorize(Roles = "1")]
         public IActionResult ViewAgregar()
         {
-            DAL_Roles objRoles = new DAL_Roles();
-            ViewData["Roles"] = objRoles.getRoles();
             ViewData["Meses"] = objLecturas.getMeses();
             //ViewData["Impresoras"] = objImpresoras.getImpresoras();
             ViewData["Areas"] = objArea.getAreas();
 
             return View("Agregar");
+        }
+
+        [Authorize(Roles = "1")]
+        public IActionResult ViewEditar(int lectura)
+        {
+            int idLectura = lectura;    
+            ViewData["Meses"] = objLecturas.getMeses();
+            ViewData["Impresoras"] = objImpresoras.getImpresoras();
+            ViewData["Areas"] = objArea.getAreas();
+            ViewData["Lectura"] = objLecturas.getLectura(idLectura);
+            return View("Editar");
         }
 
         [Authorize(Roles = "1")]

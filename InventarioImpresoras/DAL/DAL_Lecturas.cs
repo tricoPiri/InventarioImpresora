@@ -42,6 +42,74 @@ namespace InventarioImpresoras.DAL
             }
             return listaMeses;
         }
+        public List<Lecturas> getLectura(int idLectura)
+        {
+            List<Lecturas> listaLecturas = new List<Lecturas>();
+            try
+            {
+                SqlCommand sqlcmd = new SqlCommand("spObtenerLectura", objConexion.conexion);
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+                sqlcmd.Parameters.AddWithValue("@idLectura", idLectura);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlcmd);
+                DataTable dataTable = new DataTable();
+                objConexion.conexion.Open();
+                dataAdapter.Fill(dataTable);
+                objConexion.conexion.Close();
+
+                foreach (DataRow dr in dataTable.Rows)
+                {
+                    listaLecturas.Add(new Lecturas
+                    {
+                        IdLectura = (int)dr["idLectura"],
+                        //FechaLectura = (dr["fechaLectura"].ToString() == "" ? "" : (string)dr["fechaLectura"]),
+                        LecturaAnterior = (int)dr["lecturaAnterior"],
+                        LecturaActual = (int)dr["lecturaActual"],
+                        FechaLectura = dr["idMes"].ToString(),
+                        Observaciones = (dr["observaciones"].ToString() == "" ? "" : (string)dr["observaciones"]),
+                        NumeroCopias = (int)dr["numeroCopias"],
+
+                        Impresoras = new List<Impresoras>
+                        {
+                            new Impresoras()
+                            {
+                                 IdImpresora = (int)dr["idImpresora"],
+                                //Nombre = (dr["Impresora"].ToString() == "" ? "" : (string)dr["Impresora"]),
+                                //NumeroSerie = (dr["numeroSerie"].ToString() == "" ? "" : (string)dr["numeroSerie"]),
+                                Marcas = new List<Marcas>
+                                {
+                                    new Marcas()
+                                    {
+                                        Nombre = (dr["Marca"].ToString() == "" ? "" : (string)dr["Marca"]),
+                                    }
+                                },
+                                Modelos = new List<Modelos>
+                                {
+                                    new Modelos()
+                                    {
+                                        //IdModelo = (int)dr["idModelo"],
+                                        Nombre = (dr["Modelo"].ToString() == "" ? "" : (string)dr["Modelo"]),
+                                    }
+                                },
+                                Areas = new List<Areas>
+                                {
+                                    new Areas()
+                                    {
+                                        IdArea = (int)dr["idArea"],
+                                        //Nombre = (dr["Area"].ToString() == "" ? "" : (string)dr["Area"]),
+                                    }
+                                },
+                            }
+                        },
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                DAL_Utilerias.FormatoExcepcion(ex);
+            }
+            return listaLecturas;
+        }
         public List<Lecturas> getLecturas()
         {
             List<Lecturas> listaLecturas = new List<Lecturas>();
