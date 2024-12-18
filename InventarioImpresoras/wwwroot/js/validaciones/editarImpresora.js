@@ -42,38 +42,7 @@ var KTFormControls = function () {
 							}
 						}
 					}
-					/*,
-					ApellidoMaterno: {
-						validators: {
-							notEmpty: {
-								message: 'El apellido materno es requerido'
-							}
-						}
-					},
-					Usuario: {
-						validators: {
-							notEmpty: {
-								message: 'El usuario es requerido'
-							}
-						}
-					},
-					Password: {
-						validators: {
-							notEmpty: {
-								message: 'La contrase&ntilde;a es requerido'
-							}
-						}
-					},
-					Rol: {
-						validators: {
-							notEmpty: {
-								message: 'El rol es requerido'
-							}
-						}
-					}
-					*/
 				},
-
 				plugins: { //Learn more: https://formvalidation.io/guide/plugins
 					trigger: new FormValidation.plugins.Trigger(),
 					// Bootstrap Framework Integration
