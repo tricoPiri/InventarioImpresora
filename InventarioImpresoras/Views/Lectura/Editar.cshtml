@@ -46,7 +46,7 @@
                                                 <div class="col-lg-6">
                                                     <label>Fecha de lectura:</label>
                                                     <span class="text-danger">*</span>
-                                                    <select id="dropFechaLectura" name="FechaLectura" class="form-control selectpicker" data-size="7" data-live-search="true">
+                                                    <select id="dropFechaLectura" name="FechaLectura" class="form-control selectpicker" data-size="7" data-live-search="true" disabled>
                                                         <option value="">Seleccione...</option>
                                                         @foreach (InventarioImpresoras.Models.Meses mes in listaMeses)
                                                         {
@@ -292,32 +292,13 @@
             })
 
             $("#dropImpresora").change(function () {
-                /*
-                console.log("THIS MODELO: \n")
-                console.log($(this).data('modelo'))
-                console.log("THIS MARCA: \n")
-                console.log($(this).data('marca'))
-                */
-                //console.log($(this).data('dataModelo'))
-                /*
-                console.log("Modelo: \n")
-                console.log($(this).find(':selected').attr('data-modelo'))
-                console.log("Marca: \n")
-                console.log($(this).find(':selected').attr('data-marca'))
-                */
                 let modelo = $(this).find(':selected').attr('data-modelo')
                 let marca = $(this).find(':selected').attr('data-marca')
                 $("#txtMarca").val(marca)
                 $("#txtModelo").val(modelo)
 
                 const d = new Date();
-                //month = month + 1
-                //let currentYear = new Date().getFullYear();
-
-                // console.log("mes: " + month + "\n")
-                // console.log("currentYear: \n")
-                // console.log(currentYear)
-
+                
                 let idImpresora = $("#dropImpresora").val()
                 let idMes = d.getMonth()
                 let año = new Date().getFullYear()
@@ -330,6 +311,7 @@
                         console.log("response: \n")
                         console.log(response)
                         //respuestaLectura = response
+                        $("#txtLecturaAnterior").val("")
                         if (response.length > 0) {
                             $("#txtLecturaAnterior").val(response[0].lecturaActual)
                         }
